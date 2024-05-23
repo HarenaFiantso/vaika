@@ -3,7 +3,7 @@ import { ReactNode } from 'react';
 
 export default function Navbar(): ReactNode {
   return (
-    <header className='sticky top-0 w-full border-b-2'>
+    <header className='fixed top-0 w-full border-b-2'>
       <nav className='mx-auto flex max-w-[1536px] items-center justify-between gap-5 py-5'>
         <Link
           href={'/home'}
@@ -29,7 +29,7 @@ export default function Navbar(): ReactNode {
         </ul>
 
         {/* TODO: Use shadcn button */}
-        <button  className='rounded-full border-2 border-[#E83657] px-10 py-2 text-[#E83657]'>Sign In</button>
+        <button className='rounded-full border-2 border-[#E83657] px-10 py-2 text-[#E83657]'>Sign In</button>
       </nav>
     </header>
   );

@@ -1,3 +1,11 @@
-export default function HomePage() {
-  return <h1>Front office home page</h1>;
+import { ReactNode } from 'react';
+
+import Hero from '@/components/hero';
+
+export default function HomePage(): ReactNode {
+  return (
+    <main className='home__main_content'>
+      <Hero />
+    </main>
+  );
 }
