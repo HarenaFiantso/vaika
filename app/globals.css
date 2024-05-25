@@ -73,4 +73,11 @@
   body {
     @apply bg-background text-foreground;
   }
+  .hero-pattern {
+    background-image: linear-gradient(to right, rgba(30, 1, 10, 0.73), rgba(30, 1, 10, 0.73)),
+    url('../assets/tesla.png');
+    background-size: cover;
+    color: white;
+    padding: 20px;
+  }
 }
