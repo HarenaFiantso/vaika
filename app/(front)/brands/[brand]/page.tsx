@@ -4,7 +4,7 @@ import { CarFront, CircleDollarSign, Search, TrainTrack } from 'lucide-react';
 import { useParams } from 'next/navigation';
 import React from 'react';
 
-import AccordionComponent from '@/components/accordion';
+import AccordionComponent from '@/components/common/accordion';
 
 import CarsBrandList from '../carList';
 

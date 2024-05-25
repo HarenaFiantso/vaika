@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-import Hero from '@/components/hero';
+import Hero from '@/components/common/hero';
 
 export default function HomePage(): ReactNode {
   return (
