@@ -14,7 +14,7 @@ const config = {
     },
     extend: {
       backgroundImage: {
-        'hero-pattern': "url('/public/img/tesla.png')"
+        'hero-pattern': "url('/public/img/tesla.png')",
       },
       colors: {
         border: 'hsl(var(--border))',

@@ -1,16 +1,13 @@
+import { Menu } from '@mui/icons-material';
+import { CircleUserIcon } from 'lucide-react';
 import Link from 'next/link';
 import { ReactNode } from 'react';
-import { CircleUserIcon } from 'lucide-react';
-import { Menu } from '@mui/icons-material';
 
 export default function Navbar(): ReactNode {
   return (
     <header className='fixed top-0 w-full backdrop-blur-lg'>
       <nav className='mx-auto flex max-w-[1536px] items-center justify-between gap-5 py-5'>
-        <Link
-          href={'/home'}
-          className='flex-2 px-5 text-[30px] font-semibold tracking-wider text-[#E83657] '
-        >
+        <Link href={'/home'} className='flex-2 px-5 text-[30px] font-semibold tracking-wider text-[#E83657] '>
           Vaika
         </Link>
 
@@ -31,8 +28,8 @@ export default function Navbar(): ReactNode {
         </ul>
 
         {/* TODO: Use shadcn button */}
-        <button className='rounded-full flex gap-2 border-2 border-[#E83657] px-5 py-2 text-[#E83657]'>
-          <Menu className="text-white" /> <CircleUserIcon/>
+        <button className='flex gap-2 rounded-full border-2 border-[#E83657] px-5 py-2 text-[#E83657]'>
+          <Menu className='text-white' /> <CircleUserIcon />
         </button>
       </nav>
     </header>
