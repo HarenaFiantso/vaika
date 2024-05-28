@@ -12,7 +12,7 @@ export default function Hero() {
         <p className='text-slat-600 mb-4 mt-4 text-sm md:mt-6 md:text-xl lg:mb-8 dark:text-slate-400'>
           Ireny ilay menaka mahagaga e! azo hoanina, azo anorana, azo anosorana.
         </p>
-        <Link href={'#'}>
+        <Link href={'#explore'}>
           <CustomButton title='Explore Cars' type='button' containerStyle='text-white bg-blue-500 dark:bg-pink-500' />
         </Link>
       </div>
