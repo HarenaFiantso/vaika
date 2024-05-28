@@ -22,12 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={`${poppins.className} app dark:bg-[#0b1120 bg-slate-50`}>
-        <main>
-          <Navbar />
-          {children}
-        </main>
-      </body>
+      <body className={`${poppins.className}`}>{children}</body>
     </html>
   );
 }
