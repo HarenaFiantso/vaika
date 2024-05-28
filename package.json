@@ -10,20 +10,11 @@
     "format": "prettier --write ."
   },
   "dependencies": {
-    "@radix-ui/react-accordion": "^1.1.2",
-    "@radix-ui/react-slot": "^1.0.2",
-    "class-variance-authority": "^0.7.0",
-    "clsx": "^2.1.1",
-    "framer-motion": "^11.2.4",
-    "lucide-react": "^0.379.0",
     "next": "14.2.3",
-    "prettier": "^3.2.5",
     "react": "^18",
-    "react-admin": "^4.16.17",
+    "react-admin": "^4.16.18",
     "react-dom": "^18",
-    "react-hook-form": "^7.51.4",
-    "tailwind-merge": "^2.3.0",
-    "tailwindcss-animate": "^1.0.7",
+    "react-hook-form": "^7.51.5",
     "zod": "^3.23.8",
     "zustand": "^4.5.2"
   },
@@ -35,6 +26,7 @@
     "eslint": "^8",
     "eslint-config-next": "14.2.3",
     "postcss": "^8",
+    "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.14",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
