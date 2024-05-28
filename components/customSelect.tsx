@@ -22,8 +22,8 @@ const CustomSelect = ({ options, onChange, label, containerStyle, parentContaine
         className={`relative flex w-full min-w-[130px] items-center justify-between px-4 py-2.5 text-sm ${containerStyle}`}
         onClick={() => setIsShownOptions(true)}
       >
-        <span className='block truncate text-slate-400 text-sm capitalize'>{selectedOption}</span>
-        <BsChevronContract size={16} className="ml-4 text-slate-400" />
+        <span className='block truncate text-sm capitalize text-slate-400'>{selectedOption}</span>
+        <BsChevronContract size={16} className='ml-4 text-slate-400' />
       </button>
       {isShownOptions && (
         <ul className='absolute z-10 mt-2 flex max-h-60 w-full flex-col items-center space-y-1 overflow-y-auto rounded border bg-white shadow dark:border-slate-700 dark:bg-slate-800 '>
