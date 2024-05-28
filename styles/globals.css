@@ -1,3 +1,30 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #182237 #2e374a;
+  scroll-behavior: smooth;
+}
+
+.animate-car {
+  animation-name: animate-car;
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  animation-delay: 100ms;
+  animation-iteration-count: 1;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes animate-car {
+  0% {
+    transform: translate3d(-10px, 10px, 0) scale(0.8);
+  }
+  50% {
+    transform: translate3d(-100px, 100px, -20px) scale(1.25);
+  }
+  100% {
+    transform: translate3d(-10px, 10px, 0);
+  }
+}
