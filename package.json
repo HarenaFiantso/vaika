@@ -14,6 +14,7 @@
     "next": "14.2.3",
     "next-themes": "^0.3.0",
     "party-js": "^2.2.0",
+    "ra-data-json-server": "^4.16.17",
     "react": "^18",
     "react-admin": "^4.16.18",
     "react-confetti": "^6.1.0",
