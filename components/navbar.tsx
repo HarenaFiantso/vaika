@@ -17,7 +17,7 @@ export default function Navbar() {
         </Link>
 
         <div className='hidden items-center gap-5 text-white md:flex'>
-          <Link href={'/'}>View all cars</Link>
+          <Link href={'/cars'}>View all cars</Link>
           <Link href={'/'}>Contact us</Link>
           <Link href={'/'}>
             <CustomButton
