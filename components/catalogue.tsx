@@ -21,7 +21,7 @@ export default function Catalogue({ isLoading }: CatalogueProps) {
 
       <div className='mt-12 flex items-baseline justify-between'>
         <h2 className='text-left text-lg font-bold md:text-2xl dark:text-pink-500'>Recommendations</h2>
-        <Link href={'/'} className='capitalize text-blue-600 dark:text-pink-500'>
+        <Link href={'/cars'} className='capitalize text-blue-600 dark:text-pink-500'>
           view all
         </Link>
       </div>
@@ -34,7 +34,7 @@ export default function Catalogue({ isLoading }: CatalogueProps) {
       </div>
       <div className='mt-12 flex items-baseline justify-between'>
         <h2 className='text-left text-lg font-bold md:text-2xl dark:text-indigo-400'>Hot Collections</h2>
-        <Link href={'/'} className='capitalize text-blue-600 dark:text-indigo-400'>
+        <Link href={'/cars'} className='capitalize text-blue-600 dark:text-indigo-400'>
           view all
         </Link>
       </div>
