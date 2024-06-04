@@ -6,3 +6,4 @@ export { default as Catalogue } from './catalogue';
 export { default as SearchBar } from './searchBar';
 export { default as Filter } from './filter';
 export { default as CustomSelect } from './customSelect';
+export { default as AppointmentForm } from './appointmentForm'
