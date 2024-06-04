@@ -1,23 +1,28 @@
-'use client'
+'use client';
 
-import { useEffect, useState } from 'react';
-import { Brand } from '@vaika-api/typescript-client';
 import { brandApi } from '@/services/vaika-api';
+import { Brand } from '@vaika-api/typescript-client';
+import { useEffect, useState } from 'react';
 
 export default function Brands() {
   const [brands, setBrands] = useState<Brand[] | any>([]);
 
   useEffect(() => {
-    brandApi.getBrands().then(response => setBrands(response.data))
+    brandApi.getBrands().then((response) => setBrands(response.data));
   }, []);
 
   return (
-    <section className="w-full">
-      <div className="max-w-[1440px] mx-auto dark:text-white text-black">
-        {brands.length > 0? (
-          <ul className="flex flex-row justify-around">
+    <section className='w-full'>
+      <div className='mx-auto max-w-[1330px] text-black dark:text-white'>
+        {brands.length > 0 ? (
+          <ul className='flex flex-row justify-around'>
             {brands.map((brand: Brand) => (
-              <li key={brand.id} className="px-5 py-2 text-xl font-semibold text-white bg-slate-800 rounded-lg">{brand.name}</li>
+              <li
+                key={brand.id}
+                className='cursor-pointer rounded-lg bg-slate-800 px-5 py-2 text-xl font-semibold text-white'
+              >
+                {brand.name}
+              </li>
             ))}
           </ul>
         ) : (
