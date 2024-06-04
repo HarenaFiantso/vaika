@@ -7,3 +7,5 @@ export { default as SearchBar } from './searchBar';
 export { default as Filter } from './filter';
 export { default as CustomSelect } from './customSelect';
 export { default as AppointmentForm } from './appointmentForm'
+export { default as ShowAllCars } from './showAllCars';
+export { default as CarCard } from './carCard';
