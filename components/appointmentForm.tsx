@@ -5,13 +5,21 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { AppointmentFormData, Appointment } from "@/constants"
 import { CarCardInfoSkeleton } from "./skeleton"
 import CustomButton from "./customButton"
+import { AppointmentProps } from "@/constants"
+import { UUID } from "uuid-generator-ts"
 
-export default function AppointmentForm(){
+export default function AppointmentForm({carId}: AppointmentProps){
+    const uuid = new UUID();
     const {
         register,
         handleSubmit,
         formState: { errors }
-      } = useForm<AppointmentFormData>({resolver: zodResolver(Appointment)});
+      } = useForm<AppointmentFormData>({resolver: zodResolver(Appointment),
+        defaultValues:{
+            carId: carId,
+            id: uuid.toString()
+        }
+      });
       const onSubmit: SubmitHandler<AppointmentFormData> = (data) => console.log(data);
 
     return(
@@ -20,7 +28,7 @@ export default function AppointmentForm(){
                 <CarCardInfoSkeleton />
             </div>
             <div className="w-full md:w-[70%] ">
-                <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col w-[100%] md:w-[80%] mx-auto p-7'>
+                <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col w-[100%] md:w-[80%] mx-auto px-7'>
                     <h1 className="text-2xl pb-2 text-blue-600"> Appointment </h1>
                     <p className="pb-5 text-xs">Please complete these following fields to take an appointment</p>
                     <div className='flex flex-col w-[100%] gap-2 justify-between md:flex-row pb-2'>
