@@ -3,6 +3,7 @@
 import { CarCard, CustomButton, Filter, SearchBar } from '@/components';
 import { Car } from '@vaika-api/typescript-client';
 import { AppRouterInstance } from 'next/dist/shared/lib/app-router-context.shared-runtime';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
@@ -41,7 +42,10 @@ export default function Catalogue({ isLoading, allCars, size }: CatalogueProps) 
       </div>
       <div className='mt-6 grid grid-cols-1 gap-2 sm:grid-cols-2  md:grid-cols-3 md:gap-3 2xl:grid-cols-4'>
         {allCars?.length === 0 && !isLoading ? (
-          <p className='w-full text-center text-xl font-semibold text-black dark:text-white'>No cars found</p>
+          <div className='flex flex-col items-center justify-center'>
+            <Image src={'/images/empty-box.webp'} alt='hero' quality={100} width={300} height={300} priority={true} />
+            <h2 className='font-semibold text-white'>No cars found</h2>
+          </div>
         ) : (
           allCars?.slice(0, 4).map((car: Car, i: number) => <CarCard key={i} car={car} />)
         )}
@@ -58,7 +62,10 @@ export default function Catalogue({ isLoading, allCars, size }: CatalogueProps) 
       </div>
       <div className='mt-6 grid grid-cols-1 gap-2 sm:grid-cols-2  md:grid-cols-3 md:gap-3 2xl:grid-cols-4'>
         {allCars?.length === 0 && !isLoading ? (
-          <p className='w-full text-center text-xl font-semibold text-black dark:text-white'>No cars found</p>
+          <div className='flex flex-col items-center justify-center'>
+            <Image src={'/images/empty-box.webp'} alt='hero' quality={100} width={300} height={300} priority={true} />
+            <h2 className='font-semibold text-white'>No cars found</h2>
+          </div>
         ) : (
           allCars?.reverse()?.map((car: Car, i: number) => <CarCard key={i} car={car} />)
         )}
