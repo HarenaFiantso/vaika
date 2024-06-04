@@ -18,7 +18,7 @@ export default function Navbar() {
 
         <div className='hidden items-center gap-5 text-white md:flex'>
           <Link href={'/cars'}>View all cars</Link>
-          <Link href={'/'}>Contact us</Link>
+          <Link href={'/appointment'}>Create an appointment</Link>
           <Link href={'/'}>
             <CustomButton
               title='Login'
