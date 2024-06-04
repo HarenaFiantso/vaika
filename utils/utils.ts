@@ -1,9 +1,10 @@
-import { Configuration } from '@vaika-api/typescript-client';
+import { authTokenCache } from './cache';
+import { Configuration, LoginResponse } from '@vaika-api/typescript-client';
 
-//TODO: set access token got from JWT authentication
 export function getCachedConfiguration(): Configuration {
+  const token = authTokenCache.get();
   const configuration = new Configuration();
-  configuration.accessToken = '';
+  configuration.accessToken = token?.token ?? '';
   return configuration;
 }
 
