@@ -24,14 +24,14 @@ export default function AppointmentForm({ carId }: AppointmentProps) {
   const onSubmit: SubmitHandler<AppointmentFormData> = (data) => console.log(data);
 
   return (
-    <section id='appointment' className='mt-3 flex flex-col gap-5 px-20 md:flex-row'>
+    <section id='appointment' className='mt-3 flex max-w-[1440px] mx-auto items-center flex-col gap-5 px-20 md:flex-row'>
       <div className='h-[100%] w-full md:w-[45%]'>
         <CarCardInfoSkeleton />
       </div>
       <div className='w-full md:w-[70%] '>
         <form onSubmit={handleSubmit(onSubmit)} className='mx-auto flex w-[100%] flex-col px-7 md:w-[80%]'>
-          <h1 className='pb-2 text-2xl text-blue-600'> Appointment </h1>
-          <p className='pb-5 text-xs'>Please complete these following fields to take an appointment</p>
+          <h1 className='pb-2 text-2xl text-indigo-400 font-semibold'>Create an appointment</h1>
+          <p className='pb-5 mb-5'>Please complete these following fields to take an appointment</p>
           <div className='flex w-[100%] flex-col justify-between gap-2 pb-2 md:flex-row'>
             <div className='bg-red w-[100%]'>
               <label className='text-sm text-white'>Firstname</label>
