@@ -6,3 +6,14 @@ export function getCachedConfiguration(): Configuration {
   configuration.accessToken = '';
   return configuration;
 }
+
+export const updateSearchParams = (type: string, value: string): string => {
+  const searchParams: URLSearchParams = new URLSearchParams(window.location.search);
+  if (value) {
+    searchParams.set(type, value);
+  } else {
+    searchParams.delete(type);
+  }
+
+  return `${window.location.pathname}?${searchParams.toString()}`;
+};

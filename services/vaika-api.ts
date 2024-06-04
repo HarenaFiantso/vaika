@@ -1,4 +1,4 @@
-import { CarApi, SecurityApi, UserApi } from '@vaika-api/typescript-client';
+import { BrandApi, CarApi, SecurityApi, UserApi } from '@vaika-api/typescript-client';
 import { AxiosResponse } from 'axios';
 
 import { getCachedConfiguration } from '@/utils/utils';
@@ -8,6 +8,7 @@ import { getCachedConfiguration } from '@/utils/utils';
 export const securityApi = new SecurityApi(getCachedConfiguration());
 export const carApi = new CarApi(getCachedConfiguration());
 export const userApi = new UserApi(getCachedConfiguration());
+export const brandApi = new BrandApi(getCachedConfiguration());
 
 /* Unwrap responses, by default, API responses are wrapped like AxiosReponse<T> */
 /* unwrap() extracts the T object */
