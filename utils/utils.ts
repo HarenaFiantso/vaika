@@ -16,4 +16,4 @@ export const updateSearchParams = (type: string, value: string): string => {
   }
 
   return `${window.location.pathname}?${searchParams.toString()}`;
-}
+};
