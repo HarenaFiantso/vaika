@@ -1,7 +1,7 @@
 'use client';
 
 import { CustomButton } from '@/components';
-import ThemeSwitcher from '@/theme/themeSwitcher';
+import ThemeSwitcher from '@/components/theme/themeSwitcher';
 import { useTheme } from 'next-themes';
 import Link from 'next/link';
 import { useState } from 'react';

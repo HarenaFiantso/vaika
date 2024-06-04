@@ -21,30 +21,32 @@ export default function Catalogue({ isLoading, allCars, size }: CatalogueProps) 
   const router: AppRouterInstance = useRouter();
   const handleClick = (): void => {
     const newSize: number = ((size || 10) + 1) * 10;
-    const pathname: string = updateSearchParams('limit', `${newSize}`);
+    const pathname: string = updateSearchParams('size', `${newSize}`);
     router.push(pathname);
   };
 
   return (
     <section id='explore' className='relative mx-auto mt-12 w-full max-w-[1440px] p-4 md:p-16'>
-      <h1 className='text-2xl font-bold text-white md:text-4xl '>Car Catalogue</h1>
-      <p className='mt-2 text-sm text-white md:text-lg'>Explore out cars you might like</p>
+      <h1 className='bg-gradient-radial from-[#456efd] to-[#00377b,#017cd0] bg-clip-text text-transparent text-2xl font-bold md:text-4xl dark:text-white'>Car Catalogue</h1>
+      <p className='mt-2 text-sm text-gray-700 dark:text-white md:text-lg'>Explore out cars you might like</p>
       <div className='mt-6 flex w-full flex-col items-center justify-center  gap-2 md:flex-row md:justify-between'>
         <SearchBar />
         <Filter />
       </div>
 
-      <div className='mt-12 flex items-baseline justify-between'>
-        <h2 className='text-left text-lg font-bold md:text-2xl dark:text-indigo-400'>Recommendations</h2>
-        <Link href={'/cars'} className='capitalize text-blue-600 underline dark:text-indigo-400'>
+      <div className="mt-12 flex items-baseline justify-between">
+        <h2
+          className='text-left text-lg font-bold md:text-2xl dark:text-indigo-400'>
+          Recommended</h2>
+        <Link href={'/cars'} className="capitalize text-blue-600 underline dark:text-indigo-400">
           view all
         </Link>
       </div>
-      <div className='mt-6 grid grid-cols-1 gap-2 sm:grid-cols-2  md:grid-cols-3 md:gap-3 2xl:grid-cols-4'>
+      <div className="mt-6 grid grid-cols-1 gap-2 sm:grid-cols-2  md:grid-cols-3 md:gap-3 2xl:grid-cols-4">
         {allCars?.length === 0 && !isLoading ? (
           <div className='flex flex-col items-center justify-center'>
             <Image src={'/images/empty-box.webp'} alt='hero' quality={100} width={300} height={300} priority={true} />
-            <h2 className='font-semibold text-white'>No cars found</h2>
+            <h2 className='font-semibold text-black dark:text-white'>No cars found</h2>
           </div>
         ) : (
           allCars?.slice(0, 4).map((car: Car, i: number) => <CarCard key={i} car={car} />)
