@@ -1,6 +1,6 @@
 'use client';
 
-import { CustomButton, Filter, SearchBar, CarCard } from '@/components';
+import { CarCard, CustomButton, Filter, SearchBar } from '@/components';
 import { Car } from '@vaika-api/typescript-client';
 import { AppRouterInstance } from 'next/dist/shared/lib/app-router-context.shared-runtime';
 import Link from 'next/link';
@@ -34,16 +34,14 @@ export default function Catalogue({ isLoading, allCars, size }: CatalogueProps) 
       </div>
 
       <div className='mt-12 flex items-baseline justify-between'>
-        <h2 className='text-left text-lg font-bold md:text-2xl dark:text-pink-500'>Recommendations</h2>
-        <Link href={'/cars'} className='capitalize text-blue-600 dark:text-pink-500'>
+        <h2 className='text-left text-lg font-bold md:text-2xl dark:text-indigo-400'>Recommendations</h2>
+        <Link href={'/cars'} className='capitalize text-blue-600 underline dark:text-indigo-400'>
           view all
         </Link>
       </div>
       <div className='mt-6 grid grid-cols-1 gap-2 sm:grid-cols-2  md:grid-cols-3 md:gap-3 2xl:grid-cols-4'>
         {allCars?.length === 0 && !isLoading ? (
-          <p className='w-full text-center text-xl font-semibold text-black dark:text-white'>
-            No cars found
-          </p>
+          <p className='w-full text-center text-xl font-semibold text-black dark:text-white'>No cars found</p>
         ) : (
           allCars?.slice(0, 4).map((car: Car, i: number) => <CarCard key={i} car={car} />)
         )}
@@ -54,15 +52,13 @@ export default function Catalogue({ isLoading, allCars, size }: CatalogueProps) 
       </div>
       <div className='mt-12 flex items-baseline justify-between'>
         <h2 className='text-left text-lg font-bold md:text-2xl dark:text-indigo-400'>Hot Collections</h2>
-        <Link href={'/cars'} className='capitalize text-blue-600 dark:text-indigo-400'>
+        <Link href={'/cars'} className='capitalize text-blue-600 underline dark:text-indigo-400'>
           view all
         </Link>
       </div>
       <div className='mt-6 grid grid-cols-1 gap-2 sm:grid-cols-2  md:grid-cols-3 md:gap-3 2xl:grid-cols-4'>
         {allCars?.length === 0 && !isLoading ? (
-          <p className='w-full text-center text-xl font-semibold text-black dark:text-white'>
-            No cars found
-          </p>
+          <p className='w-full text-center text-xl font-semibold text-black dark:text-white'>No cars found</p>
         ) : (
           allCars?.reverse()?.map((car: Car, i: number) => <CarCard key={i} car={car} />)
         )}
