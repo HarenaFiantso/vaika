@@ -1,6 +1,7 @@
 'use client';
 
 import { CustomButton } from '@/components';
+import ThemeSwitcher from '@/theme/themeSwitcher';
 import Link from 'next/link';
 import { useState } from 'react';
 import { BsGithub, BsTwitter } from 'react-icons/bs';
@@ -34,10 +35,12 @@ export default function Navbar() {
             <Link href={'https://twitter.com/HarenaFiantso'} className='flex gap-2'>
               <BsTwitter size={20} className='h-6 w-6 text-slate-400' />
             </Link>
+            <ThemeSwitcher />
           </div>
         </div>
 
         <div className='flex h-full cursor-pointer items-center gap-4 object-contain md:hidden'>
+          <ThemeSwitcher />
           <RiMenu3Line
             size={20}
             className='flex h-full cursor-pointer items-center object-contain text-slate-400 md:hidden'
