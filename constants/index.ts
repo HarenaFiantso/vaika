@@ -1,3 +1,5 @@
+import z from 'zod';
+
 export const yearsOfProduction = [
   { title: 'Year', value: 'year' },
   { title: '2015', value: '2015' },
@@ -25,3 +27,21 @@ export const fuels = [
     value: 'Electricity',
   },
 ];
+export const Appointment = z
+  .object({
+    id: z.string(),
+    lastname: z.string().min(5),
+    firstname: z.string().min(5),
+    email: z.string().email(),
+    contact: z.string().min(10).max(10),
+    message: z.string().min(5),
+    appointmentDateTime: z.coerce.date(),
+    carId: z.string(),
+  })
+  .required();
+
+export type AppointmentFormData = z.infer<typeof Appointment>;
+
+export type AppointmentProps = {
+  carId: string;
+};

@@ -16,7 +16,7 @@ export default function Navbar() {
     <nav className='absolute left-0 right-0 z-10 w-full border-b bg-transparent p-2 dark:border-b-gray-800'>
       <div className='mx-auto flex max-w-[1440px] items-center justify-between px-2 md:px-6'>
         <Link href={'/'}>
-          <span className='text-xl font-bold text-indigo-700 md:text-3xl dark:text-white'>Vaika</span>
+          <span className='text-xl font-bold text-indigo-700 md:text-3xl dark:text-indigo-400'>Vaika</span>
         </Link>
 
         <div className='hidden items-center gap-5 text-white md:flex'>
