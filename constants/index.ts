@@ -1,4 +1,4 @@
-import z from 'zod'
+import z from 'zod';
 
 export const yearsOfProduction = [
   { title: 'Year', value: 'year' },
@@ -36,12 +36,12 @@ export const Appointment = z
     contact: z.string().min(10).max(10),
     message: z.string().min(5),
     appointmentDateTime: z.coerce.date(),
-    carId: z.string()
+    carId: z.string(),
   })
   .required();
 
 export type AppointmentFormData = z.infer<typeof Appointment>;
 
 export type AppointmentProps = {
-  carId: string
-}
+  carId: string;
+};
