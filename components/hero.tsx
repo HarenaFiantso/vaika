@@ -6,10 +6,10 @@ export default function Hero() {
   return (
     <section className='light dark:dark gradient-radial relative mx-auto flex max-w-[1440px] flex-col items-center gap-10 bg-contain bg-bottom bg-no-repeat md:flex-row'>
       <div className='flex-1 p-4 pt-32 md:p-16 md:pt-28'>
-        <h1 className='bg-gradient-radial from-[#456efd] to-[#00377b,#017cd0] bg-clip-text text-5xl font-bold text-blue-500 text-transparent md:text-7xl dark:text-white'>
+        <h1 className='bg-gradient-radial from-[#456efd] to-[#00377b,#017cd0] bg-clip-text text-5xl font-bold text-blue-500 text-transparent dark:text-white md:text-7xl'>
           Find the car that is searching for you.
         </h1>
-        <p className='text-slat-600 mb-4 mt-4 text-sm md:mt-6 md:text-xl lg:mb-8 dark:text-slate-400'>
+        <p className='text-slat-600 mb-4 mt-4 text-sm dark:text-slate-400 md:mt-6 md:text-xl lg:mb-8'>
           Ireny ilay menaka mahagaga e! azo hoanina, azo anorana, azo anosorana.
         </p>
         <Link href={'#explore'}>

@@ -1,11 +1,11 @@
 'use client';
 
 import { useTheme } from 'next-themes';
-import { useState } from 'react';
+import { ReactNode, useState } from 'react';
 import { BsSun } from 'react-icons/bs';
 import { MdDarkMode } from 'react-icons/md';
 
-export default function ThemeSwitcher() {
+export default function ThemeSwitcher(): ReactNode {
   const { theme, setTheme } = useTheme();
   const [isDropdownShown, setIsDropdownShown] = useState(false);
 
@@ -25,7 +25,7 @@ export default function ThemeSwitcher() {
         />
       )}
       {isDropdownShown && (
-        <div className='absolute -right-6 top-12 z-50 flex min-w-[140px] flex-col rounded-md border-gray-500 bg-white/70 from-slate-700 to-slate-900 text-center  backdrop-blur-lg md:-right-1/3 dark:border-slate-700/95 dark:bg-gradient-radial'>
+        <div className='absolute -right-6 top-12 z-50 flex min-w-[140px] flex-col rounded-md border-gray-500 bg-white/70 from-slate-700 to-slate-900 text-center  backdrop-blur-lg dark:border-slate-700/95 dark:bg-gradient-radial md:-right-1/3'>
           <button
             onClick={() => {
               setIsDropdownShown(false);
