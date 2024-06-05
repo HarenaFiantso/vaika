@@ -10,3 +10,4 @@ export { default as AppointmentForm } from './appointmentForm';
 export { default as ShowAllCars } from './showAllCars';
 export { default as CarCard } from './carCard';
 export { default as Brands } from './brands';
+export { default as Footer } from './footer'
