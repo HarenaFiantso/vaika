@@ -1,20 +1,24 @@
-'use client'
+'use client';
 
-import { ReactNode, useEffect, useState } from 'react';
 import { ThemeProvider } from 'next-themes';
+import { ReactNode, useEffect, useState } from 'react';
 
-export default function CustomThemeProvider({ children }: { children: ReactNode }) {
-  const [mounted, setMounted] = useState(false);
+import { CustomThemeProviderProps } from '@/utils/type';
+
+export default function CustomThemeProvider({ children }: CustomThemeProviderProps): ReactNode {
+  const [mounted, setMounted] = useState<boolean>(false);
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
   if (!mounted) {
-    return <>{children}</>
+    return <>{children}</>;
   }
 
   return (
-    <ThemeProvider enableSystem={true} attribute="class">{children}</ThemeProvider>
-  )
+    <ThemeProvider enableSystem={true} attribute='class'>
+      {children}
+    </ThemeProvider>
+  );
 }

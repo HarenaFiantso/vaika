@@ -1,8 +1,11 @@
 import { Footer, Navbar } from '@/components';
 import { ReactNode } from 'react';
+
+import { FrontOfficeLayoutProps } from '@/utils/type';
+
 import CustomThemeProvider from '@/components/theme/customThemeProvider';
 
-export default function FrontOfficeLayout({ children }: { children: ReactNode }) {
+export default function FrontOfficeLayout({ children }: FrontOfficeLayoutProps): ReactNode {
   return (
     <>
       <CustomThemeProvider>

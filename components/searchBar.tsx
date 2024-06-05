@@ -2,8 +2,8 @@ import Image from 'next/image';
 
 export default function SearchBar() {
   return (
-    <form className='flex w-full max-w-3xl flex-col items-center justify-center gap-2 rounded border bg-white  px-2 md:flex-row dark:border-slate-700 dark:bg-slate-800'>
-      <div className='relative flex w-full items-center px-4 py-2.5 md:border-r dark:border-slate-700 '>
+    <form className='flex w-full max-w-3xl flex-col items-center justify-center gap-2 rounded border bg-white  px-2 dark:border-slate-700 dark:bg-slate-800 md:flex-row'>
+      <div className='relative flex w-full items-center px-4 py-2.5 dark:border-slate-700 md:border-r '>
         <Image src={'/icons/car-logo.svg'} alt='car company logo' width={20} height={20} className='object-contain' />
         <input
           type='text'
