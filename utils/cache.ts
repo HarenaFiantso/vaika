@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import { LoginResponse } from '@vaika-api/typescript-client';
 
@@ -33,11 +33,12 @@ const createObjectCacher = <T>(key: string, storageFactory: () => Storage) => {
 };
 
 // @ts-ignore
-const inLocalStorage = <T>(key: string) => createObjectCacher<T>(key, () => {
-  if (typeof window !== 'undefined') {
-    return window?.localStorage;
-  }
-});
+const inLocalStorage = <T>(key: string) =>
+  createObjectCacher<T>(key, () => {
+    if (typeof window !== 'undefined') {
+      return window?.localStorage;
+    }
+  });
 
 export const authTokenCache = inLocalStorage<LoginResponse>('auth_token');
 

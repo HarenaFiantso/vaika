@@ -1,4 +1,4 @@
-import { BrandApi, CarApi, SecurityApi, UserApi, AppointmentApi } from '@vaika-api/typescript-client';
+import { AppointmentApi, BrandApi, CarApi, SecurityApi, UserApi } from '@vaika-api/typescript-client';
 import { AxiosResponse } from 'axios';
 
 import { getCachedConfiguration } from '@/utils/utils';
