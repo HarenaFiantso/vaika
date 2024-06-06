@@ -7,6 +7,7 @@ import { AppointmentProps } from '@/constants';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { UUID } from 'uuid-generator-ts';
+import { appointmentApi } from '@/services/vaika-api';
 
 export default function AppointmentForm({ carId }: AppointmentProps) {
   const uuid = new UUID();
@@ -17,11 +18,14 @@ export default function AppointmentForm({ carId }: AppointmentProps) {
   } = useForm<AppointmentFormData>({
     resolver: zodResolver(Appointment),
     defaultValues: {
-      carId: carId,
+      id_car: carId,
       id: uuid.toString(),
     },
   });
-  const onSubmit: SubmitHandler<AppointmentFormData> = (data) => console.log(data);
+  const onSubmit: SubmitHandler<AppointmentFormData> = (data) => {
+    console.log(data);
+   // appointmentApi.updateAppointment(data).then((response) => console.log(response)).catch((error)=>console.log(error));
+  }
 
   return (
     <section id='appointment' className='mt-3 flex max-w-[1440px] mx-auto items-center flex-col gap-5 px-20 md:flex-row'>
@@ -37,18 +41,18 @@ export default function AppointmentForm({ carId }: AppointmentProps) {
               <label className='text-sm text-white'>Firstname</label>
               <input
                 className='h-[2rem] w-[100%] rounded-[7px] bg-[#fbfbfb29] p-2 outline-none'
-                {...register('firstname')}
+                {...register('first_name')}
               />
-              {errors.firstname && <span className='text-xs'>this field should be more longer</span>}
+              {errors.first_name && <span className='text-xs'>this field should be more longer</span>}
             </div>
 
             <div className='bg-blue w-[100%]'>
               <label className='text-sm text-white'>Lastname</label>
               <input
                 className='h-[2rem] w-[100%] rounded-[7px] bg-[#fbfbfb29] p-2 outline-none'
-                {...register('lastname')}
+                {...register('last_name')}
               />
-              {errors.lastname && <span className='text-xs'>this should be more longer</span>}
+              {errors.last_name && <span className='text-xs'>this should be more longer</span>}
             </div>
           </div>
 
@@ -72,9 +76,9 @@ export default function AppointmentForm({ carId }: AppointmentProps) {
             <input
               className='h-[2rem] w-[100%] rounded-[7px] bg-[#fbfbfb29] p-2 outline-none'
               type='datetime-local'
-              {...register('appointmentDateTime')}
+              {...register('appointment_datetime')}
             />
-            {errors.appointmentDateTime && <span> {errors.appointmentDateTime.message} </span>}
+            {errors.appointment_datetime && <span> {errors.appointment_datetime.message} </span>}
           </div>
 
           <div>
