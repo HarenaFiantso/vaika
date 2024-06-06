@@ -45,3 +45,7 @@ export type AppointmentFormData = z.infer<typeof Appointment>;
 export type AppointmentProps = {
   carId: string;
 };
+
+export type IdCar = {
+  idCar: string;
+};

@@ -2,12 +2,11 @@
 
 import CustomButton from './customButton';
 import { CarCardInfoSkeleton } from './skeleton';
-import { Appointment, AppointmentFormData } from '@/constants';
-import { AppointmentProps } from '@/constants';
+import { Appointment, AppointmentFormData, AppointmentProps } from '@/constants';
+import { appointmentApi } from '@/services/vaika-api';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { UUID } from 'uuid-generator-ts';
-import { appointmentApi } from '@/services/vaika-api';
 
 export default function AppointmentForm({ carId }: AppointmentProps) {
   const uuid = new UUID();
@@ -24,18 +23,21 @@ export default function AppointmentForm({ carId }: AppointmentProps) {
   });
   const onSubmit: SubmitHandler<AppointmentFormData> = (data) => {
     console.log(data);
-   // appointmentApi.updateAppointment(data).then((response) => console.log(response)).catch((error)=>console.log(error));
-  }
+    // appointmentApi.updateAppointment(data).then((response) => console.log(response)).catch((error)=>console.log(error));
+  };
 
   return (
-    <section id='appointment' className='mt-3 flex max-w-[1440px] mx-auto items-center flex-col gap-5 px-20 md:flex-row'>
+    <section
+      id='appointment'
+      className='mx-auto mt-3 flex max-w-[1440px] flex-col items-center gap-5 px-20 md:flex-row'
+    >
       <div className='h-[100%] w-full md:w-[45%]'>
-        <CarCardInfoSkeleton />
+        <CarCardInfoSkeleton idCar={carId} />
       </div>
       <div className='w-full md:w-[70%] '>
         <form onSubmit={handleSubmit(onSubmit)} className='mx-auto flex w-[100%] flex-col px-7 md:w-[80%]'>
-          <h1 className='pb-2 text-2xl text-indigo-400 font-semibold'>Create an appointment</h1>
-          <p className='pb-5 mb-5'>Please complete these following fields to take an appointment</p>
+          <h1 className='pb-2 text-2xl font-semibold text-indigo-400'>Create an appointment</h1>
+          <p className='mb-5 pb-5'>Please complete these following fields to take an appointment</p>
           <div className='flex w-[100%] flex-col justify-between gap-2 pb-2 md:flex-row'>
             <div className='bg-red w-[100%]'>
               <label className='text-sm text-white'>Firstname</label>
