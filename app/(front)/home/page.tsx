@@ -20,7 +20,7 @@ export default function Home({ searchParams }: HomeProps) {
 
   useEffect((): void => {
     setIsLoading(true);
-    carApi.getCars().then((data) => setAllCars(data));
+    carApi.getCars().then((data) => setAllCars(data.data));
     setIsLoading(false);
   }, []);
 
