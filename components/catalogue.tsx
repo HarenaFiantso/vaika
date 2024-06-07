@@ -42,7 +42,7 @@ export default function Catalogue({ isLoading, allCars, size }: CatalogueProps) 
           view all
         </Link>
       </div>
-      <div className='mt-6 grid grid-cols-1 gap-2 sm:grid-cols-2  md:grid-cols-3 md:gap-3 2xl:grid-cols-4'>
+      <div className='mt-6 flex justify-center gap-2 flex-wrap'>
         {allCars?.length === 0 && !isLoading ? (
           <div className='flex flex-col items-center justify-center'>
             <Image src={'/images/empty-box.webp'} alt='hero' quality={100} width={300} height={300} priority={true} />
@@ -62,7 +62,7 @@ export default function Catalogue({ isLoading, allCars, size }: CatalogueProps) 
           view all
         </Link>
       </div>
-      <div className='mt-6 grid grid-cols-1 gap-2 sm:grid-cols-2  md:grid-cols-3 md:gap-3 2xl:grid-cols-4'>
+      <div className='mt-6 flex justify-center gap-2 flex-wrap'>
         {allCars?.length === 0 && !isLoading ? (
           <div className='flex flex-col items-center justify-center'>
             <Image src={'/images/empty-box.webp'} alt='hero' quality={100} width={300} height={300} priority={true} />
