@@ -1,13 +1,12 @@
 'use client';
 
-import { useState, useEffect } from 'react';
 import { CarCard, CustomButton, Filter, SearchBar } from '@/components';
 import { Car } from '@vaika-api/typescript-client';
 import { AppRouterInstance } from 'next/dist/shared/lib/app-router-context.shared-runtime';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-
+import { useEffect, useState } from 'react';
 import { updateSearchParams } from '@/utils/utils';
 import { CarCardSkeleton } from '@/components/skeleton';
 
