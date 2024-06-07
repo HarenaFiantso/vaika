@@ -5,9 +5,9 @@ import { CarCardInfoSkeleton } from './skeleton';
 import { Appointment, AppointmentFormData, AppointmentProps } from '@/constants';
 import { appointmentApi } from '@/services/vaika-api';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { SubmitHandler, useForm } from 'react-hook-form';
 import { Appointment as Aptm } from '@vaika-api/typescript-client';
 import { useState } from 'react';
+import { SubmitHandler, useForm } from 'react-hook-form';
 import { UUID } from 'uuid-generator-ts';
 
 export default function AppointmentForm({ carId }: AppointmentProps) {
@@ -22,11 +22,14 @@ export default function AppointmentForm({ carId }: AppointmentProps) {
     defaultValues: {
       car_id: carId,
       id: uuid.toString(),
-      status: "PENDING"
+      status: 'PENDING',
     },
   });
   const onSubmit: SubmitHandler<AppointmentFormData> = (data) => {
-    appointmentApi.crupdateAppointment([data]).then((response) => console.log(response)).catch((error)=>console.log(error));
+    appointmentApi
+      .crupdateAppointment([data])
+      .then((response) => console.log(response))
+      .catch((error) => console.log(error));
   };
   return (
     <section

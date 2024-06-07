@@ -7,7 +7,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
+
 import { updateSearchParams } from '@/utils/utils';
+
 import { CarCardSkeleton } from '@/components/skeleton';
 
 type CatalogueProps = {
