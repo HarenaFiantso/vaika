@@ -1,6 +1,5 @@
-'use client'
+'use client';
 
-import { useState } from 'react';
 import Image from 'next/image';
 
 type SearchBarProps = {
@@ -8,7 +7,7 @@ type SearchBarProps = {
   setSearchModel: (model: string) => void;
 };
 
-export default function SearchBar({ setSearchBrand, setSearchModel } : SearchBarProps) {
+export default function SearchBar({ setSearchBrand, setSearchModel }: SearchBarProps) {
   return (
     <form className='flex w-full max-w-3xl flex-col items-center justify-center gap-2 rounded border bg-white  px-2 dark:border-slate-700 dark:bg-slate-800 md:flex-row'>
       <div className='relative flex w-full items-center px-4 py-2.5 dark:border-slate-700 md:border-r '>
