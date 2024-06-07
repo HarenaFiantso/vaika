@@ -6,10 +6,14 @@ import { Appointment, AppointmentFormData, AppointmentProps } from '@/constants'
 import { appointmentApi } from '@/services/vaika-api';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { SubmitHandler, useForm } from 'react-hook-form';
+import { Appointment as Aptm } from '@vaika-api/typescript-client';
+import { useState } from 'react';
 import { UUID } from 'uuid-generator-ts';
 
 export default function AppointmentForm({ carId }: AppointmentProps) {
   const uuid = new UUID();
+  const [appointment, setAppointment] = useState<Aptm[] | any>([]);
+
   const {
     register,
     handleSubmit,
@@ -23,7 +27,10 @@ export default function AppointmentForm({ carId }: AppointmentProps) {
   });
   const onSubmit: SubmitHandler<AppointmentFormData> = (data) => {
     console.log(data);
-    // appointmentApi.updateAppointment(data).then((response) => console.log(response)).catch((error)=>console.log(error));
+    setAppointment(data);
+    if(appointment.length > 0){
+      appointmentApi.crupdateAppointment(appointment).then((response) => console.log(response)).catch((error)=>console.log(error));
+    }
   };
 
   return (
