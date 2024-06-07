@@ -21,16 +21,13 @@ export default function AppointmentForm({ carId }: AppointmentProps) {
   } = useForm<AppointmentFormData>({
     resolver: zodResolver(Appointment),
     defaultValues: {
-      id_car: carId,
+      car_id: carId,
       id: uuid.toString(),
     },
   });
   const onSubmit: SubmitHandler<AppointmentFormData> = (data) => {
-    console.log(data);
-    setAppointment(data);
-    if(appointment.length > 0){
-      appointmentApi.crupdateAppointment(appointment).then((response) => console.log(response)).catch((error)=>console.log(error));
-    }
+      appointmentApi.crupdateAppointment(data).then((response) => console.log(response)).catch((error)=>console.log(error));
+  
   };
   return (
     <section
