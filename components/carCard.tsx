@@ -4,7 +4,7 @@ import CustomButton from './customButton';
 import { Car } from '@vaika-api/typescript-client';
 import { useRouter } from 'next/navigation';
 
-export default function carCard({ car }: { car: Car }) {
+export default function CarCard({ car }: { car: Car }) {
   const router = useRouter();
   return (
     <div className='group h-fit  w-full max-w-lg rounded-2xl border bg-white from-slate-700 to-slate-900   p-3 transition-all duration-150 ease-linear md:p-4 md:hover:border md:hover:shadow-lg dark:border-zinc-600 dark:bg-gradient-radial dark:text-slate-300'>
