@@ -5,7 +5,7 @@ import { CarCardSkeleton } from './skeleton';
 import { Car } from '@vaika-api/typescript-client';
 import { useEffect, useState } from 'react';
 
-import { carApi } from '../services/vaika-api';
+import { carApi } from '@/services/vaika-api';
 
 export default function ShowAllCars() {
   const [cars, setCars] = useState<Car[] | any>([]);
@@ -19,7 +19,7 @@ export default function ShowAllCars() {
         {cars?.length === 0 ? (
           <p className='w-full text-center text-xl font-semibold text-black dark:text-white'>No cars found</p>
         ) : (
-          cars?.slice(0, 4).map((car: Car, i: number) => <CarCard key={i} car={car} />)
+          cars?.slice(0, 4).map((car: Car, i: number) => <CarCard isPinned key={i} car={car} />)
         )}
         {!cars &&
           Array(4)
