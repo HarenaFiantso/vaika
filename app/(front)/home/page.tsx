@@ -1,6 +1,6 @@
 'use client';
 
-import { Brands, Catalogue, Hero } from '@/components';
+import { Brands, Catalogue, Contact, Hero } from '@/components';
 import { carApi } from '@/services/vaika-api';
 import { Car } from '@vaika-api/typescript-client';
 import { ReactNode, useEffect, useState } from 'react';
@@ -23,6 +23,7 @@ export default function Home({ searchParams }: HomeProps): ReactNode {
       <Hero />
       <Brands />
       {allCars && <Catalogue allCars={allCars} isLoading={isLoading} size={(size || 20) / 10} />}
+      <Contact />
     </main>
   );
 }

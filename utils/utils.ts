@@ -1,5 +1,6 @@
 import { authTokenCache } from './cache';
 import { Configuration, LoginResponse } from '@vaika-api/typescript-client';
+import { maxLength } from 'ra-core';
 
 export function getCachedConfiguration(): Configuration {
   const token = authTokenCache.get();
@@ -17,4 +18,8 @@ export const updateSearchParams = (type: string, value: string): string => {
   }
 
   return `${window.location.pathname}?${searchParams.toString()}`;
+};
+
+export const validateString = (value: unknown, maxLength: number) => {
+  return !(!value || typeof value !== 'string' || value.length > maxLength);
 };
