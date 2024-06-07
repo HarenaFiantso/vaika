@@ -1,12 +1,12 @@
 'use client';
 
+import { CustomButton } from '@/components';
 import { carApi } from '@/services/vaika-api';
 import { Car } from '@vaika-api/typescript-client';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
-import { CustomButton } from '@/components';
-import { useRouter } from 'next/navigation';
 
 const CardDetails = ({ params }: { params: { id: string } }) => {
   const { id } = params;
@@ -72,11 +72,11 @@ const CardDetails = ({ params }: { params: { id: string } }) => {
                   </div>
                 </div>
                 <CustomButton
-                handleClick={() => router.push(`/appointment/${car.id}`)}
-            title='Take an appointement'
-            type='submit'
-            containerStyle=' mx-left mt-[1rem] w-[70%] bg-blue-600 text-white px-6 border rounded-full dark:bg-slate-700 dark:text-slate-300 dark:border-slate-600'
-          />
+                  handleClick={() => router.push(`/appointment/${car.id}`)}
+                  title='Take an appointement'
+                  type='submit'
+                  containerStyle=' mx-left mt-[7rem] w-[70%] bg-blue-600 text-white px-6 border rounded-full dark:bg-slate-700 dark:text-slate-300 dark:border-slate-600'
+                />
               </div>
             </div>
           </div>
