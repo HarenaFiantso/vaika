@@ -12,7 +12,6 @@ import { UUID } from 'uuid-generator-ts';
 
 export default function AppointmentForm({ carId }: AppointmentProps) {
   const uuid = new UUID();
-  const [appointment, setAppointment] = useState<Aptm[] | any>([]);
 
   const {
     register,
@@ -23,11 +22,11 @@ export default function AppointmentForm({ carId }: AppointmentProps) {
     defaultValues: {
       car_id: carId,
       id: uuid.toString(),
+      status: "PENDING"
     },
   });
   const onSubmit: SubmitHandler<AppointmentFormData> = (data) => {
-      appointmentApi.crupdateAppointment(data).then((response) => console.log(response)).catch((error)=>console.log(error));
-  
+    appointmentApi.crupdateAppointment([data]).then((response) => console.log(response)).catch((error)=>console.log(error));
   };
   return (
     <section
