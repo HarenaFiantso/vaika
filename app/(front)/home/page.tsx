@@ -1,19 +1,13 @@
 'use client';
 
-import { Brands, Catalogue, Hero } from '@/components';
+import { Brands, Catalogue, Contact, Hero } from '@/components';
 import { carApi } from '@/services/vaika-api';
 import { Car } from '@vaika-api/typescript-client';
-import { useEffect, useState } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 
-type FetchCarProps = {
-  size?: number;
-};
+import { HomeProps } from '@/utils/type';
 
-type HomeProps = {
-  searchParams: FetchCarProps;
-};
-
-export default function Home({ searchParams }: HomeProps) {
+export default function Home({ searchParams }: HomeProps): ReactNode {
   const { size } = searchParams;
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [allCars, setAllCars] = useState<Car[] | any>([]);
@@ -29,6 +23,7 @@ export default function Home({ searchParams }: HomeProps) {
       <Hero />
       <Brands />
       {allCars && <Catalogue allCars={allCars} isLoading={isLoading} size={(size || 20) / 10} />}
+      <Contact />
     </main>
   );
 }

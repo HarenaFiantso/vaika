@@ -3,6 +3,7 @@
 import { CarCard, CustomButton, Filter, SearchBar } from '@/components';
 import { Car } from '@vaika-api/typescript-client';
 import { AppRouterInstance } from 'next/dist/shared/lib/app-router-context.shared-runtime';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
@@ -20,28 +21,33 @@ export default function Catalogue({ isLoading, allCars, size }: CatalogueProps) 
   const router: AppRouterInstance = useRouter();
   const handleClick = (): void => {
     const newSize: number = ((size || 10) + 1) * 10;
-    const pathname: string = updateSearchParams('limit', `${newSize}`);
+    const pathname: string = updateSearchParams('size', `${newSize}`);
     router.push(pathname);
   };
 
   return (
     <section id='explore' className='relative mx-auto mt-12 w-full max-w-[1440px] p-4 md:p-16'>
-      <h1 className='text-2xl font-bold text-white md:text-4xl '>Car Catalogue</h1>
-      <p className='mt-2 text-sm text-white md:text-lg'>Explore out cars you might like</p>
+      <h1 className='bg-gradient-radial from-[#456efd] to-[#00377b,#017cd0] bg-clip-text text-2xl font-bold text-transparent dark:text-white md:text-4xl'>
+        Car Catalogue
+      </h1>
+      <p className='mt-2 text-sm text-gray-700 dark:text-white md:text-lg'>Explore out cars you might like</p>
       <div className='mt-6 flex w-full flex-col items-center justify-center  gap-2 md:flex-row md:justify-between'>
         <SearchBar />
         <Filter />
       </div>
 
-      <div className='mt-12 flex items-baseline justify-between'>
-        <h2 className='text-left text-lg font-bold md:text-2xl dark:text-indigo-400'>Recommendations</h2>
+      <div className='mt-12 flex items-center justify-between'>
+        <h2 className='text-left text-lg font-bold dark:text-indigo-400 md:text-2xl'>Recommended</h2>
         <Link href={'/cars'} className='capitalize text-blue-600 underline dark:text-indigo-400'>
           view all
         </Link>
       </div>
-      <div className='mt-6 grid grid-cols-1 gap-2 sm:grid-cols-2  md:grid-cols-3 md:gap-3 2xl:grid-cols-4'>
+      <div className='mt-6 flex flex-wrap justify-center gap-2'>
         {allCars?.length === 0 && !isLoading ? (
-          <p className='w-full text-center text-xl font-semibold text-black dark:text-white'>No cars found</p>
+          <div className='flex flex-col items-center justify-center'>
+            <Image src={'/images/empty-box.webp'} alt='hero' quality={100} width={300} height={300} priority={true} />
+            <h2 className='font-semibold text-black dark:text-white'>No cars found</h2>
+          </div>
         ) : (
           allCars?.slice(0, 4).map((car: Car, i: number) => <CarCard key={i} car={car} />)
         )}
@@ -51,14 +57,17 @@ export default function Catalogue({ isLoading, allCars, size }: CatalogueProps) 
             .map((_, i: number) => <CarCardSkeleton key={i} />)}
       </div>
       <div className='mt-12 flex items-baseline justify-between'>
-        <h2 className='text-left text-lg font-bold md:text-2xl dark:text-indigo-400'>Hot Collections</h2>
+        <h2 className='text-left text-lg font-bold dark:text-indigo-400 md:text-2xl'>Hot Collections</h2>
         <Link href={'/cars'} className='capitalize text-blue-600 underline dark:text-indigo-400'>
           view all
         </Link>
       </div>
-      <div className='mt-6 grid grid-cols-1 gap-2 sm:grid-cols-2  md:grid-cols-3 md:gap-3 2xl:grid-cols-4'>
+      <div className='mt-6 flex flex-wrap justify-center gap-2'>
         {allCars?.length === 0 && !isLoading ? (
-          <p className='w-full text-center text-xl font-semibold text-black dark:text-white'>No cars found</p>
+          <div className='flex flex-col items-center justify-center'>
+            <Image src={'/images/empty-box.webp'} alt='hero' quality={100} width={300} height={300} priority={true} />
+            <h2 className='font-semibold text-white'>No cars found</h2>
+          </div>
         ) : (
           allCars?.reverse()?.map((car: Car, i: number) => <CarCard key={i} car={car} />)
         )}

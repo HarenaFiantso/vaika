@@ -32,7 +32,6 @@ export default function AppointmentForm({ carId }: AppointmentProps) {
       appointmentApi.crupdateAppointment(appointment).then((response) => console.log(response)).catch((error)=>console.log(error));
     }
   };
-
   return (
     <section
       id='appointment'

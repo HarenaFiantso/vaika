@@ -1,11 +1,20 @@
-import { Navbar } from '@/components';
+import { Footer, Navbar } from '@/components';
 import { ReactNode } from 'react';
 
-export default function FrontOfficeLayout({ children }: { children: ReactNode }) {
+import { FrontOfficeLayoutProps } from '@/utils/type';
+
+import CustomThemeProvider from '@/components/theme/customThemeProvider';
+
+export default function FrontOfficeLayout({ children }: FrontOfficeLayoutProps): ReactNode {
   return (
-    <main className='app bg-slate-50 dark:bg-[#0b1120]'>
-      <Navbar />
-      {children}
-    </main>
+    <>
+      <CustomThemeProvider>
+        <main className='app bg-slate-50 dark:bg-[#0b1120]'>
+          <Navbar />
+          {children}
+        </main>
+        <Footer />
+      </CustomThemeProvider>
+    </>
   );
 }
