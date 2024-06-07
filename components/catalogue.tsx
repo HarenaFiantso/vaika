@@ -49,7 +49,7 @@ export default function Catalogue({ isLoading, allCars, size }: CatalogueProps) 
             <h2 className='font-semibold text-black dark:text-white'>No cars found</h2>
           </div>
         ) : (
-          allCars?.slice(0, 4).map((car: Car, i: number) => <CarCard key={i} car={car} />)
+          allCars?.slice(0, 4).map((car: Car, i: number) => <CarCard key={i} car={car}  isPinned/>)
         )}
         {isLoading &&
           Array(4)
@@ -69,7 +69,7 @@ export default function Catalogue({ isLoading, allCars, size }: CatalogueProps) 
             <h2 className='font-semibold text-white'>No cars found</h2>
           </div>
         ) : (
-          allCars?.reverse()?.map((car: Car, i: number) => <CarCard key={i} car={car} />)
+          allCars?.reverse()?.map((car: Car, i: number) => <CarCard key={i} car={car}  isPinned/>)
         )}
         {isLoading &&
           Array(8)
