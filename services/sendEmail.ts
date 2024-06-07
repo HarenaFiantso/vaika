@@ -1,5 +1,3 @@
-'use server';
-
 import { email } from 'ra-core';
 import { Resend } from 'resend';
 

@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import CustomButton from '@/components/customButton';
 
 export default function Contact() {
+  'use client'
   const { register } = useForm();
 
   return (
