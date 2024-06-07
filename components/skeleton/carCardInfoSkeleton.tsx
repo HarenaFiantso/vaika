@@ -13,7 +13,7 @@ export default function CarCardInfoSkeleton({ idCar }: IdCar) {
     setIsLoading(true);
     carApi.getACarById(idCar).then((data) => setCar(data.data));
     setIsLoading(false);
-  }, []);
+  }, [idCar]);
 
   return (
     <div
