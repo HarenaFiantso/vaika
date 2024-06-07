@@ -1,8 +1,8 @@
 export default function CarCardSkeleton() {
   return (
-    <div className='group h-fit  w-full max-w-lg animate-pulse rounded-2xl border bg-white from-slate-700 to-slate-900   p-3 transition-all duration-150 ease-linear md:p-4 md:hover:border md:hover:shadow-lg dark:border-zinc-600 dark:bg-gradient-radial dark:text-slate-300'>
+    <div className='group h-fit  w-full max-w-lg animate-pulse rounded-2xl border bg-white from-slate-700 to-slate-900   p-3 transition-all duration-150 ease-linear dark:border-zinc-600 dark:bg-gradient-radial dark:text-slate-300 md:p-4 md:hover:border md:hover:shadow-lg'>
       <div className='flex items-center justify-between'>
-        <h1 className='h-3 w-28 max-w-[75%] truncate bg-gray-400 text-lg font-bold capitalize md:text-xl dark:bg-slate-900'></h1>
+        <h1 className='h-3 w-28 max-w-[75%] truncate bg-gray-400 text-lg font-bold capitalize dark:bg-slate-900 md:text-xl'></h1>
         <div className='h-[30px] w-[30px] rounded-full bg-gray-400 dark:bg-slate-900'></div>
       </div>
       <p className='mt-1 h-3 w-24 bg-gray-400 capitalize text-gray-400 dark:bg-slate-900'></p>

@@ -13,11 +13,11 @@ export default function CarCardInfoSkeleton({ idCar }: IdCar) {
     setIsLoading(true);
     carApi.getACarById(idCar).then((data) => setCar(data.data));
     setIsLoading(false);
-  }, []);
+  }, [idCar]);
 
   return (
     <div
-      className={`group w-[100%]  max-w-lg p-3   transition-all duration-150 ease-linear md:p-4 dark:border-zinc-600 dark:bg-gradient-radial  dark:text-slate-300 ${isLoading ? 'animate-pulse  from-slate-700 to-slate-900 ' : ''}`}
+      className={`group w-[100%]  max-w-lg p-3   transition-all duration-150 ease-linear dark:border-zinc-600 dark:bg-gradient-radial dark:text-slate-300  md:p-4 ${isLoading ? 'animate-pulse  from-slate-700 to-slate-900 ' : ''}`}
     >
       <div className='flex items-center justify-between'>
         <h1
