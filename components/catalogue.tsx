@@ -1,5 +1,6 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import { CarCard, CustomButton, Filter, SearchBar } from '@/components';
 import { Car } from '@vaika-api/typescript-client';
 import { AppRouterInstance } from 'next/dist/shared/lib/app-router-context.shared-runtime';
@@ -8,7 +9,6 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
 import { updateSearchParams } from '@/utils/utils';
-
 import { CarCardSkeleton } from '@/components/skeleton';
 
 type CatalogueProps = {
@@ -19,6 +19,19 @@ type CatalogueProps = {
 
 export default function Catalogue({ isLoading, allCars, size }: CatalogueProps) {
   const router: AppRouterInstance = useRouter();
+  const [searchBrand, setSearchBrand] = useState('');
+  const [searchModel, setSearchModel] = useState('');
+  const [filteredCars, setFilteredCars] = useState<Car[]>(allCars);
+
+  useEffect(() => {
+    const result = allCars.filter(
+      (car) =>
+        car?.brand?.name?.toLowerCase().includes(searchBrand.toLowerCase()) &&
+        car?.model?.toLowerCase().includes(searchModel.toLowerCase())
+    );
+    setFilteredCars(result);
+  }, [searchBrand, searchModel, allCars]);
+
   const handleClick = (): void => {
     const newSize: number = ((size || 10) + 1) * 10;
     const pathname: string = updateSearchParams('size', `${newSize}`);
@@ -30,9 +43,9 @@ export default function Catalogue({ isLoading, allCars, size }: CatalogueProps) 
       <h1 className='bg-gradient-radial from-[#456efd] to-[#00377b,#017cd0] bg-clip-text text-2xl font-bold text-transparent dark:text-white md:text-4xl'>
         Car Catalogue
       </h1>
-      <p className='mt-2 text-sm text-gray-700 dark:text-white md:text-lg'>Explore out cars you might like</p>
+      <p className='mt-2 text-sm text-gray-700 dark:text-white md:text-lg'>Explore our cars you might like</p>
       <div className='mt-6 flex w-full flex-col items-center justify-center  gap-2 md:flex-row md:justify-between'>
-        <SearchBar />
+        <SearchBar setSearchBrand={setSearchBrand} setSearchModel={setSearchModel} />
         <Filter />
       </div>
 
@@ -43,13 +56,13 @@ export default function Catalogue({ isLoading, allCars, size }: CatalogueProps) 
         </Link>
       </div>
       <div className='mt-6 flex flex-wrap justify-center gap-2'>
-        {allCars?.length === 0 && !isLoading ? (
+        {filteredCars?.length === 0 && !isLoading ? (
           <div className='flex flex-col items-center justify-center'>
             <Image src={'/images/empty-box.webp'} alt='hero' quality={100} width={300} height={300} priority={true} />
             <h2 className='font-semibold text-black dark:text-white'>No cars found</h2>
           </div>
         ) : (
-          allCars?.slice(0, 4).map((car: Car, i: number) => <CarCard key={i} car={car}  isPinned/>)
+          filteredCars?.slice(0, 4).map((car: Car, i: number) => <CarCard key={i} car={car} isPinned />)
         )}
         {isLoading &&
           Array(4)
@@ -63,13 +76,13 @@ export default function Catalogue({ isLoading, allCars, size }: CatalogueProps) 
         </Link>
       </div>
       <div className='mt-6 flex flex-wrap justify-center gap-2'>
-        {allCars?.length === 0 && !isLoading ? (
+        {filteredCars?.length === 0 && !isLoading ? (
           <div className='flex flex-col items-center justify-center'>
             <Image src={'/images/empty-box.webp'} alt='hero' quality={100} width={300} height={300} priority={true} />
             <h2 className='font-semibold text-white'>No cars found</h2>
           </div>
         ) : (
-          allCars?.reverse()?.map((car: Car, i: number) => <CarCard key={i} car={car}  isPinned/>)
+          allCars?.reverse()?.map((car: Car, i: number) => <CarCard key={i} car={car} isPinned />)
         )}
         {isLoading &&
           Array(8)
@@ -77,7 +90,7 @@ export default function Catalogue({ isLoading, allCars, size }: CatalogueProps) 
             .map((_, i: number) => <CarCardSkeleton key={i} />)}
       </div>
 
-      {size < allCars?.length && (
+      {size < filteredCars?.length && (
         <CustomButton
           title='Show More'
           type='button'
