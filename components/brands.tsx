@@ -15,7 +15,7 @@ export default function Brands() {
     <section className='w-full'>
       <div className='mx-auto max-w-[1330px] text-black dark:text-white'>
         {brands.length > 0 ? (
-          <ul className='flex flex-row justify-around'>
+          <ul className='flex flex-row flex-wrap justify-around gap-2'>
             {brands.map((brand: Brand) => (
               <li
                 key={brand.id}
