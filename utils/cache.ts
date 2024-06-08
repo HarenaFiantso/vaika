@@ -33,6 +33,7 @@ const createObjectCacher = <T>(key: string, storageFactory: () => Storage) => {
 };
 
 const inLocalStorage = <T>(key: string) =>
+  // @ts-ignore
   createObjectCacher<T>(key, () => {
     if (typeof window !== 'undefined') {
       return window?.localStorage;
