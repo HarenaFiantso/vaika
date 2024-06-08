@@ -5,7 +5,7 @@ import { CarCardSkeleton } from './skeleton';
 import { Car } from '@vaika-api/typescript-client';
 import { useEffect, useState } from 'react';
 
-import { carApi } from '../services/vaika-api';
+import { carApi } from '@/services/vaika-api';
 
 export default function ShowAllCars() {
   const [cars, setCars] = useState<Car[] | any>([]);
