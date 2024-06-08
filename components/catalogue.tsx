@@ -32,7 +32,7 @@ export default function Catalogue({ isLoading, allCars, size }: CatalogueProps) 
       </h1>
       <p className='mt-2 text-sm text-gray-700 dark:text-white md:text-lg'>Explore out cars you might like</p>
       <div className='mt-6 flex w-full flex-col items-center justify-center  gap-2 md:flex-row md:justify-between'>
-        <SearchBar />
+        <SearchBar  setSearchBrand={() => console.log("Hello World")} setSearchModel={() => console.log("Hello World")}/>
         <Filter />
       </div>
 

@@ -10,7 +10,7 @@ export default function Hero() {
           Find the car that is searching for you.
         </h1>
         <p className='text-slat-600 mb-4 mt-4 text-sm dark:text-slate-400 md:mt-6 md:text-xl lg:mb-8'>
-          Ireny ilay menaka mahagaga e! azo hoanina, azo anorana, azo anosorana.
+          Streamline your car rental experience with our effortless booking process.
         </p>
         <Link href={'#explore'}>
           <CustomButton title='Explore Cars' type='button' containerStyle='text-white bg-blue-500 dark:bg-pink-500' />

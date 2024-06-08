@@ -33,7 +33,7 @@ export default function LoginPage() {
               <Link className='mb-5.5 inline-block' href='/'>
                 <h1 className='text-2xl font-semibold text-white'>Vaika Admin</h1>
               </Link>
-              <p className='text-white 2xl:px-20'>Vaika admin is an app to manage a 'vaika' as admin.</p>
+              <p className='text-white 2xl:px-20'>Vaika admin is an app to manage a <span>vaika</span> as admin.</p>
 
               <span className='mt-15 inline-block'>
                 <svg width='350' height='350' viewBox='0 0 350 350' fill='none' xmlns='http://www.w3.org/2000/svg'>
