@@ -4,6 +4,7 @@ import { IdCar } from '@/constants';
 import { carApi } from '@/services/vaika-api';
 import { Car } from '@vaika-api/typescript-client';
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 
 export default function CarCardInfoSkeleton({ idCar }: IdCar) {
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -30,7 +31,9 @@ export default function CarCardInfoSkeleton({ idCar }: IdCar) {
       <p className={`mt-1 h-3 w-24 capitalize text-gray-400 ${isLoading ? 'bg-gray-400  dark:bg-slate-900' : ''}`}></p>
 
       <div className='relative mt-2 h-[40vh] w-full'>
-        <div className='h-full w-full rounded bg-gray-400 dark:bg-slate-900'></div>
+        <div className='h-full w-full rounded bg-gray-400 dark:bg-slate-900'>
+        <Image src={car && car.images && car.images[0] ? car.images[0].url : ''} alt='car' fill className='absolute w-full rounded-lg object-contain ' />
+        </div>
       </div>
       <div className='mt-2 h-fit w-full p-2'>
         <div className='flex w-full items-center justify-between gap-4'>
