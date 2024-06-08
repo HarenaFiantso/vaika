@@ -13,21 +13,17 @@ import {
   UpdateManyParams,
   UpdateManyResult,
 } from 'react-admin';
-<<<<<<< HEAD
 import { brandProvider } from '@/providers/brandProvider';
 import { carProvider } from './carProvider';
-=======
->>>>>>> b68be55 (feat: user data provider)
+
 
 export const MAX_ITEM_PER_PAGE = 1;
 
 const getProvider = (resourceType: string): VaikaDataProvider => {
   if (resourceType === 'users') return userProvider;
-<<<<<<< HEAD
   if (resourceType === 'brands') return brandProvider;
   if (resourceType === 'cars') return carProvider;
-=======
->>>>>>> b68be55 (feat: user data provider)
+
   throw new Error('Unexpected resourceType: ' + resourceType);
 };
 
