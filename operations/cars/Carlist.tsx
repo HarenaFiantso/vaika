@@ -5,9 +5,9 @@ export const CarList = () => (
     <Datagrid rowClick='edit'>
       <TextField source='name' />
       <TextField source='brand.name' />
-      <TextField source='price'/>
-      <TextField source='model'/>
-      <TextField source='power'/>
+      <TextField source='price' />
+      <TextField source='model' />
+      <TextField source='power' />
       <TextField source='images' />
     </Datagrid>
   </List>

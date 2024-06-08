@@ -5,7 +5,7 @@ export const BrandList = () => (
     <Datagrid rowClick='edit'>
       <TextField source='id' />
       <TextField source='name' />
-      <TextField source='logoUrl'/>
+      <TextField source='logoUrl' />
     </Datagrid>
   </List>
 );
