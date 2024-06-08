@@ -4,8 +4,8 @@ import { AuthProvider } from 'react-admin';
 import { authTokenCache, clearCaches } from '@/utils/cache';
 
 export const authProvider: AuthProvider = {
-  login: async ({ username, password }) => {
-    const loginRes = await unwrap(() => securityApi.login({ email: username, password: password }));
+  login: async ({ email, password }) => {
+    const loginRes = await unwrap(() => securityApi.login({ email: email, password: password }));
     authTokenCache.replace(loginRes);
     return Promise.resolve();
   },
