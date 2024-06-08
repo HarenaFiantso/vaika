@@ -35,10 +35,10 @@ export default function CarCard({ car, isPinned }: CarCardProps) {
 
       <div className='relative mt-1 h-48 w-full rounded-lg'>
         <Image
-          src={car && car.images && car.images[0] ? car.images[0].url : ''}
+          src={car.images && car.images.length > 0 ? `${car.images[0].url}` : ''}
           alt='car'
           fill
-          className='absolute w-full rounded-lg object-contain '
+          className='absolute w-full rounded-lg object-contain'
         />
       </div>
       <div className='mt-2 h-fit w-full p-2'>
