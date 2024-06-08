@@ -23,10 +23,10 @@ export default function LoginPage() {
         );
     };
   return (
-    <>
+    <div className="bg-[#0b1120] h-[100vh] ">
       <Breadcrumb pageName="Log In" />
 
-      <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
+      <div className="rounded-sm  shadow-default bg-[#0b1120] mt-[4rem]">
         <div className="flex flex-wrap items-center">
           <div className="hidden w-full xl:block xl:w-1/2">
             <div className="px-26 py-17.5 text-center">
@@ -36,7 +36,7 @@ export default function LoginPage() {
                 </h1>
               </Link>
 
-              <p className="2xl:px-20">
+              <p className="2xl:px-20 text-white">
                 Vaika admin is an app to manage a 'vaika' as admin.
               </p>
 
@@ -167,14 +167,13 @@ export default function LoginPage() {
 
           <div className="w-full border-stroke dark:border-strokedark xl:w-1/2 xl:border-l-2">
             <div className="w-full p-4 sm:p-12.5 xl:p-17.5">
-              <span className="mb-1.5 block font-medium">Start for free</span>
-              <h2 className="mb-9 text-2xl font-bold text-black dark:text-white sm:text-title-xl2">
+              <h2 className="mb-9 text-2xl font-bold text-white sm:text-title-xl2">
                 Sign In to Vaika Admin
               </h2>
 
               <form onSubmit={handleSubmit}>
                 <div className="mb-4">
-                  <label className="mb-2.5 block font-medium text-black dark:text-white">
+                  <label className="mb-2.5 block font-medium text-white">
                     Email
                   </label>
                   <div className="relative">
@@ -183,7 +182,7 @@ export default function LoginPage() {
                       value={email}
                       onChange={e => setEmail(e.target.value)}
                       placeholder="Enter your email"
-                      className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
+                      className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 outline-none focus:border-primary focus-visible:shadow-none  text-white dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
                     />
 
                     <span className="absolute right-4 top-4">
@@ -207,7 +206,7 @@ export default function LoginPage() {
                 </div>
 
                 <div className="mb-6">
-                  <label className="mb-2.5 block font-medium text-black dark:text-white">
+                  <label className="mb-2.5 block font-medium text-white">
                      Password
                   </label>
                   <div className="relative">
@@ -216,7 +215,7 @@ export default function LoginPage() {
                       value={password}
                     onChange={e => setPassword(e.target.value)}
                       placeholder="6+ Characters, 1 Capital letter"
-                      className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
+                      className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 outline-none focus:border-primary focus-visible:shadow-none text-white dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
                     />
 
                     <span className="absolute right-4 top-4">
@@ -247,7 +246,7 @@ export default function LoginPage() {
                   <input
                     type="submit"
                     value="Sign In"
-                    className="w-full cursor-pointer rounded-lg border border-primary bg-primary p-4 text-black transition hover:bg-opacity-90"
+                    className="w-full cursor-pointer rounded-lg border border-primary bg-primary p-4 text-white transition hover:bg-opacity-90"
                   />
                 </div>
               </form>
@@ -255,6 +254,6 @@ export default function LoginPage() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
