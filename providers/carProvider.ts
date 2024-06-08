@@ -13,7 +13,7 @@ export const carProvider: VaikaDataProvider = {
   saveOrUpdate: async function (resources: CrupdateCar[]) {
     return await unwrap(() => carApi.crupdateCars(resources));
   },
-  delete: function (id: string): Promise<any> {
+  delete: function (id: string) {
     return unwrap(() => carApi.deleteACarById(id));
   },
 };
