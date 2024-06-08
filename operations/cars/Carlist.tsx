@@ -1,4 +1,4 @@
-import { Datagrid, List, TextField } from 'react-admin';
+import { Datagrid, ImageField, List, TextField } from 'react-admin';
 
 export const CarList = () => (
   <List>
@@ -8,7 +8,7 @@ export const CarList = () => (
       <TextField source='price' />
       <TextField source='model' />
       <TextField source='power' />
-      <TextField source='images' />
+      <ImageField source='images[0].url' title='Featured image' />
     </Datagrid>
   </List>
 );

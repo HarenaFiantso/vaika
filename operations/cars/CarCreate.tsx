@@ -1,9 +1,22 @@
-import { Car, CrupdateCar } from '@vaika-api/typescript-client';
-import { BooleanInput, Edit, NumberInput, SimpleForm, TextInput } from 'react-admin';
+import { Brand, Car, CrupdateCar } from '@vaika-api/typescript-client';
+import {
+  BooleanInput,
+  Create,
+  NumberInput,
+  ReferenceField,
+  SelectInput,
+  SimpleForm,
+  TextInput,
+  useGetList,
+} from 'react-admin';
 
-export const CarEdit = () => {
+export const CarCreate = () => {
+  const { data } = useGetList('brands', { pagination: { page: 1, perPage: 10 } });
+
+  console.log(data);
+
   return (
-    <Edit
+    <Create
       transform={(car: Car): CrupdateCar => ({
         id: car.id,
         name: car.name,
@@ -19,8 +32,6 @@ export const CarEdit = () => {
       })}
     >
       <SimpleForm>
-        <BooleanInput source='pinned' />
-        <TextInput source='id' readOnly />
         <TextInput source='name' />
         <TextInput source='description' />
         <NumberInput source='price' />
@@ -29,6 +40,6 @@ export const CarEdit = () => {
         <TextInput source='power' />
         <NumberInput source='place_number' />
       </SimpleForm>
-    </Edit>
+    </Create>
   );
 };
