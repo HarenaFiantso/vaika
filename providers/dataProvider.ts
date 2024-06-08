@@ -1,5 +1,7 @@
 import { VaikaDataProvider } from './VaikaDataProvider';
+import { carProvider } from './carProvider';
 import { userProvider } from './userProvider';
+import { brandProvider } from '@/providers/brandProvider';
 import {
   DeleteManyParams,
   DeleteManyResult,
@@ -13,9 +15,6 @@ import {
   UpdateManyParams,
   UpdateManyResult,
 } from 'react-admin';
-import { brandProvider } from '@/providers/brandProvider';
-import { carProvider } from './carProvider';
-
 
 export const MAX_ITEM_PER_PAGE = 1;
 

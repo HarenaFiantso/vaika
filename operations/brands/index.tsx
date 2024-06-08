@@ -1,6 +1,7 @@
 import { BrandList } from '@/operations/brands/BrandList';
+
 const brands = {
-  list: <BrandList/>
-}
+  list: <BrandList />,
+};
 
 export default brands;
