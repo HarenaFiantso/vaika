@@ -1,3 +1,4 @@
+import { AppointmentStatusEnum } from '@vaika-api/typescript-client';
 import z from 'zod';
 
 export const yearsOfProduction = [
@@ -27,6 +28,7 @@ export const fuels = [
     value: 'Electricity',
   },
 ];
+
 export const Appointment = z
   .object({
     id: z.string(),
@@ -36,7 +38,8 @@ export const Appointment = z
     contact: z.string().min(10).max(10),
     message: z.string().min(5),
     appointment_datetime: z.coerce.date(),
-    id_car: z.string(),
+    car_id: z.string(),
+    status: z.enum([AppointmentStatusEnum.PENDING]),
   })
   .required();
 
@@ -48,4 +51,8 @@ export type AppointmentProps = {
 
 export type IdCar = {
   idCar: string;
+};
+
+export type Id = {
+  id: string;
 };
