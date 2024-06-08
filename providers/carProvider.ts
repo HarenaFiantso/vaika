@@ -1,5 +1,6 @@
 import { VaikaDataProvider } from './VaikaDataProvider';
 import { brandApi, carApi, unwrap } from '@/services/vaika-api';
+import { CrupdateCar } from '@vaika-api/typescript-client';
 
 export const carProvider: VaikaDataProvider = {
   getList: async function (page?: number | undefined, perPage?: number | undefined, filter?: any, meta?: any) {
@@ -9,7 +10,7 @@ export const carProvider: VaikaDataProvider = {
   getOne: async function (id: string, meta?: any) {
     return await unwrap(() => carApi.getACarById(id));
   },
-  saveOrUpdate: async function (resources: any, meta?: any) {
+  saveOrUpdate: async function (resources: CrupdateCar[]) {
     return await unwrap(() => carApi.crupdateCars(resources));
   },
   delete: function (id: string): Promise<any> {
