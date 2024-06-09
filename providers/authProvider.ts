@@ -1,10 +1,10 @@
-import {securityApi, unwrap} from '@/services/vaika-api';
-import {AuthProvider} from 'react-admin';
-import {authTokenCache} from "@/lib/cache";
+import { authTokenCache } from '@/lib/cache';
+import { securityApi, unwrap } from '@/services/vaika-api';
+import { AuthProvider } from 'react-admin';
 
 export const authProvider: AuthProvider = {
-  login: async ({email, password}) => {
-    const loginRes = await unwrap(() => securityApi.login({email: email, password: password}));
+  login: async ({ email, password }) => {
+    const loginRes = await unwrap(() => securityApi.login({ email: email, password: password }));
     authTokenCache.replace(loginRes);
     return Promise.resolve();
   },
@@ -19,7 +19,7 @@ export const authProvider: AuthProvider = {
     const status = error.status;
     if (status === 401 || status === 403) {
       authTokenCache.invalidate();
-      return Promise.reject({message: 'Authentication failed'});
+      return Promise.reject({ message: 'Authentication failed' });
     }
     return Promise.resolve();
   },

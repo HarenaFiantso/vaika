@@ -1,8 +1,8 @@
-import {Car, CrupdateCar} from '@vaika-api/typescript-client';
-import {Create, NumberInput, SimpleForm, TextInput, useGetList,} from 'react-admin';
+import { Car, CrupdateCar } from '@vaika-api/typescript-client';
+import { Create, NumberInput, SimpleForm, TextInput, useGetList } from 'react-admin';
 
 export const CarCreate = () => {
-  const {data} = useGetList('brands', {pagination: {page: 1, perPage: 10}});
+  const { data } = useGetList('brands', { pagination: { page: 1, perPage: 10 } });
 
   return (
     <Create
@@ -21,13 +21,13 @@ export const CarCreate = () => {
       })}
     >
       <SimpleForm>
-        <TextInput source='name' name="name"/>
-        <TextInput source='description' name="description"/>
-        <NumberInput source='price' name="number"/>
-        <TextInput source='model' name="model"/>
-        <TextInput source='color' name="color"/>
-        <TextInput source='power' name="power"/>
-        <NumberInput source='place_number' name="placeNumber"/>
+        <TextInput source='name' name='name' />
+        <TextInput source='description' name='description' />
+        <NumberInput source='price' name='number' />
+        <TextInput source='model' name='model' />
+        <TextInput source='color' name='color' />
+        <TextInput source='power' name='power' />
+        <NumberInput source='place_number' name='placeNumber' />
       </SimpleForm>
     </Create>
   );

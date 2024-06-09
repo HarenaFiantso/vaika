@@ -1,5 +1,6 @@
+import { TVaikaDataProvider } from '@/lib/type';
+import { brandProvider, carProvider, userProvider } from '@/providers';
 import {
-  DataProvider as RaDataProvider,
   DeleteManyParams,
   DeleteManyResult,
   GetManyParams,
@@ -7,12 +8,11 @@ import {
   GetManyReferenceResult,
   GetManyResult,
   Identifier,
+  DataProvider as RaDataProvider,
   RaRecord,
   UpdateManyParams,
   UpdateManyResult,
 } from 'react-admin';
-import {brandProvider, carProvider, userProvider} from "@/providers";
-import {TVaikaDataProvider} from "@/lib/type";
 
 export const MAX_ITEM_PER_PAGE: number = 50;
 
@@ -38,25 +38,25 @@ const dataProvider: RaDataProvider = {
     }
     const filter = params.filter;
     const result = await getProvider(resourceType).getList(page, perPage, filter, meta);
-    return {data: result, pageInfo: {hasNextPage: true, hasPreviousPage: true}};
+    return { data: result, pageInfo: { hasNextPage: true, hasPreviousPage: true } };
   },
   async getOne(resourceType: string, params: any) {
     const result = await getProvider(resourceType).getOne(params.id, params.meta);
-    return {data: result};
+    return { data: result };
   },
   async update(resourceType: string, params: any) {
     const result = await getProvider(resourceType).saveOrUpdate([params.data], {
       isUpdate: true,
     });
-    return {data: result[0]};
+    return { data: result[0] };
   },
   async create(resourceType: string, params: any) {
     const result = await getProvider(resourceType).saveOrUpdate(params.data);
-    return {data: result[0]};
+    return { data: result[0] };
   },
   async delete(resourceType: string, params: any) {
     const result = await getProvider(resourceType).delete(params.id);
-    return {data: result};
+    return { data: result };
   },
   getMany: function <RecordType extends RaRecord<Identifier> = any>(
     resource: string,

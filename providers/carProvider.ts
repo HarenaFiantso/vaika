@@ -1,6 +1,6 @@
-import {carApi, unwrap} from "@/services/vaika-api";
-import {TVaikaDataProvider} from "@/lib/type";
-import {CrupdateCar} from "@vaika-api/typescript-client";
+import { TVaikaDataProvider } from '@/lib/type';
+import { carApi, unwrap } from '@/services/vaika-api';
+import { CrupdateCar } from '@vaika-api/typescript-client';
 
 export const carProvider: TVaikaDataProvider = {
   getList: async function (page?: number | undefined, perPage?: number | undefined, filter?: any, meta?: any) {

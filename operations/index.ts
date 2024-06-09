@@ -1,5 +1,5 @@
-import users from './users'
-import cars from './cars'
-import brands from './brands'
+import brands from './brands';
+import cars from './cars';
+import users from './users';
 
-export {users, cars, brands}
+export { users, cars, brands };

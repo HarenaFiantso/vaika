@@ -1,5 +1,5 @@
-import {TVaikaDataProvider} from "@/lib/type";
-import {brandApi, unwrap} from "@/services/vaika-api";
+import { TVaikaDataProvider } from '@/lib/type';
+import { brandApi, unwrap } from '@/services/vaika-api';
 
 export const brandProvider: TVaikaDataProvider = {
   getList: async function (page?: number | undefined, perPage?: number | undefined, filter?: any, meta?: any) {

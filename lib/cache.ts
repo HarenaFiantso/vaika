@@ -1,6 +1,6 @@
 'use client';
 
-import {LoginResponse} from '@vaika-api/typescript-client';
+import { LoginResponse } from '@vaika-api/typescript-client';
 
 const createObjectCache = <T>(key: string, storageFactory: () => Storage) => {
   const storage: Storage = storageFactory();
