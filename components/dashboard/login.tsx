@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { useLogin, useNotify } from 'ra-core';
 import { useState } from 'react';
 
@@ -68,6 +69,9 @@ export default function Login() {
               {isLoading ? 'Loading...' : 'Login'}
             </Button>
           </form>
+          <Link href={'/home'} className='text-center text-zinc-400 underline transition-all hover:text-zinc-900'>
+            Return to home page
+          </Link>
         </div>
       </div>
       <div className='hidden bg-muted lg:block'>
