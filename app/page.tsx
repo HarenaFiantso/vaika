@@ -1,14 +1,5 @@
-'use client';
-
-import { useRouter } from 'next/navigation';
-import { useEffect } from 'react';
-
-export default function Root() {
-  const router = useRouter();
-
-  useEffect(() => {
-    router.push('/home');
-  }, [router]);
-
-  return null;
+export default function Home() {
+  return (
+    <h1>Vaika 2.0</h1>
+  );
 }
