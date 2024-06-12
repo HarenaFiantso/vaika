@@ -1,11 +1,13 @@
 'use client';
 
-import Brands from '@/components/common/brands';
-import Hero from '@/components/common/hero';
 import { carApi } from '@/services/vaika-api';
-import { useEffect, useState } from 'react';
 import { Car } from '@vaika-api/typescript-client';
+import { useEffect, useState } from 'react';
+
+import Brands from '@/components/common/brands';
 import Catalogue from '@/components/common/catalogue';
+import Hero from '@/components/common/hero';
+import Aos from 'aos';
 
 export default function Page() {
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -13,6 +15,9 @@ export default function Page() {
 
   useEffect((): void => {
     setIsLoading(true);
+    Aos.init({
+      offset: 100,
+    });
     carApi.getCars().then((data) => setAllCars(data.data));
     setIsLoading(false);
   }, []);

@@ -5,7 +5,7 @@ const AdminApp = dynamic(() => import('@/components/dashboard/adminApp'), { ssr:
 
 export default function Admin() {
   return (
-    <Suspense fallback="Loading...">
+    <Suspense fallback='Loading...'>
       <AdminApp />
     </Suspense>
   );
