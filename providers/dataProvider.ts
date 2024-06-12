@@ -2,6 +2,7 @@ import { VaikaDataProvider } from './VaikaDataProvider';
 import { carProvider } from './carProvider';
 import { userProvider } from './userProvider';
 import { brandProvider } from '@/providers/brandProvider';
+import { appointmentProvider } from './appointmentProvider';
 import {
   DeleteManyParams,
   DeleteManyResult,
@@ -22,6 +23,7 @@ const getProvider = (resourceType: string): VaikaDataProvider => {
   if (resourceType === 'users') return userProvider;
   if (resourceType === 'brands') return brandProvider;
   if (resourceType === 'cars') return carProvider;
+  if (resourceType === 'appointments') return appointmentProvider;
 
   throw new Error('Unexpected resourceType: ' + resourceType);
 };
