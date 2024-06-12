@@ -4,6 +4,7 @@ import { brandApi } from '@/services/vaika-api';
 import { Brand } from '@vaika-api/typescript-client';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 
 export default function Brands() {
   const [brands, setBrands] = useState<Brand[] | any>([]);
@@ -19,13 +20,15 @@ export default function Brands() {
         {brands.length > 0 ? (
           <ul className='flex flex-row flex-wrap justify-around gap-2'>
             {brands.map((brand: Brand) => (
-              <li
+              <div>
+                <li
                 onClick={() => router.push(`/brand/${brand.id}`)}
                 key={brand.id}
                 className='cursor-pointer rounded-lg bg-slate-800 px-5 py-2 text-xl font-semibold text-white'
               >
                 {brand.name}
               </li>
+              </div>
             ))}
           </ul>
         ) : (
