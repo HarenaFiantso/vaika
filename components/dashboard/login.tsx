@@ -65,7 +65,7 @@ export default function Login() {
                 required
               />
             </div>
-            <Button type="submit" className="py-7 rounded-lg w-full" disabled={isLoading}>
+            <Button type="submit" className="w-full rounded-lg py-7" disabled={isLoading}>
               {isLoading ? 'Loading...' : 'Login'}
             </Button>
           </form>
