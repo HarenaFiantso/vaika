@@ -1,5 +1,5 @@
 import React from 'react';
-import { BooleanInput, Edit, NumberInput, SimpleForm, TextInput, TextField, SelectInput } from 'react-admin';
+import { BooleanInput, Edit, NumberInput, SimpleForm, TextInput, SelectInput } from 'react-admin';
 import { AppointmentStatusEnum } from '@vaika-api/typescript-client';
 
 const statusChoices = Object.entries(AppointmentStatusEnum).map(([key, value]) => ({
@@ -10,13 +10,14 @@ const statusChoices = Object.entries(AppointmentStatusEnum).map(([key, value]) =
 export const AppointmentEdit = () => (
     <Edit>
         <SimpleForm>
-            <TextField source='id' />
-            <TextField source='last_name' />
-            <TextField source='first_name' />
-            <TextField source='email' />
-            <TextField source='contact' />
-            <TextField source='message' />
-            <TextField source='appointment_datetime' />
+            <TextInput source='id' />
+            <TextInput source='last_name' />
+            <TextInput source='first_name' />
+            <TextInput source='email' />
+            <TextInput source='contact' />
+            <TextInput source='message' />
+            <TextInput source='appointment_datetime' />
+            <TextInput source='car.id' />
             <SelectInput source='status' choices={statusChoices} />
         </SimpleForm>
     </Edit>
