@@ -1,6 +1,5 @@
 'use client';
 
-
 import { carApi } from '@/services/vaika-api';
 import { Car } from '@vaika-api/typescript-client';
 import Aos from 'aos';
@@ -18,7 +17,7 @@ export default function Page() {
     setIsLoading(true);
     Aos.init({
       offset: 100,
-    })
+    });
     carApi.getCars().then((data) => setAllCars(data.data));
     setIsLoading(false);
   }, []);

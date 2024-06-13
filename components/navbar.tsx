@@ -39,7 +39,7 @@ export default function Navbar(): ReactNode {
               onClick={() => setIsDropdownShown(false)}
               className='flex gap-2'
             >
-              <BsGithub size={20} className={`h-6 w-6  ${theme === 'dark' ? 'text-slate-400' : 'text-slate-700'}`} />
+              <BsGithub size={20} className={`h-6 w-6 ${theme === 'dark' ? 'text-slate-400' : 'text-slate-700'}`} />
             </Link>
             <Link
               href={'https://twitter.com/HarenaFiantso'}
@@ -62,7 +62,7 @@ export default function Navbar(): ReactNode {
         </div>
 
         {isDropdownShown && (
-          <div className='absolute right-8 top-16 z-50 flex min-h-[270px] min-w-[290px]  flex-col gap-2 rounded-lg border bg-white/30 from-slate-700 to-slate-900 px-5 py-6 text-left shadow backdrop-blur-sm dark:border-zinc-600 dark:bg-gradient-radial md:hidden '>
+          <div className='dark:bg-gradient-radial absolute right-8 top-16 z-50 flex min-h-[270px] min-w-[290px] flex-col gap-2 rounded-lg border bg-white/30 from-slate-700 to-slate-900 px-5 py-6 text-left shadow backdrop-blur-sm dark:border-zinc-600 md:hidden'>
             <Link
               href={'/cars'}
               className='text-indigo-500 transition-all hover:text-indigo-800 dark:text-white dark:hover:text-indigo-500'
@@ -82,7 +82,7 @@ export default function Navbar(): ReactNode {
                 onClick={() => setIsDropdownShown(false)}
                 className='mr-4 flex gap-2'
               >
-                <BsGithub size={20} className={`h-6 w-6  ${theme === 'dark' ? 'text-slate-400' : 'text-slate-700'}`} />
+                <BsGithub size={20} className={`h-6 w-6 ${theme === 'dark' ? 'text-slate-400' : 'text-slate-700'}`} />
                 <span>Github</span>
               </Link>
               <Link
@@ -100,4 +100,3 @@ export default function Navbar(): ReactNode {
     </nav>
   );
 }
-

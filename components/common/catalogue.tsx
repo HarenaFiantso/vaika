@@ -1,18 +1,18 @@
 'use client';
 
 import { Car } from '@vaika-api/typescript-client';
+import { AppRouterInstance } from 'next/dist/shared/lib/app-router-context.shared-runtime';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { useEffect, useState } from 'react';
+
+import { updateSearchParams } from '@/utils/utils';
 
 import CarCard from '@/components/common/carCard';
 import CarCardSkeleton from '@/components/common/carCardSkeleton';
 import Filter from '@/components/common/filter';
 import SearchBar from '@/components/common/searchBar';
 import { Button } from '@/components/ui/button';
-import { AppRouterInstance } from 'next/dist/shared/lib/app-router-context.shared-runtime';
-
-import { useEffect, useState } from 'react';
-import { updateSearchParams } from '@/utils/utils';
 
 type CatalogueProps = {
   allCars: Car[];
@@ -20,7 +20,7 @@ type CatalogueProps = {
   size: number;
 };
 
-export default function Catalogue({ allCars, isLoading , size}: CatalogueProps) {
+export default function Catalogue({ allCars, isLoading, size }: CatalogueProps) {
   const router: AppRouterInstance = useRouter();
   const [searchBrand, setSearchBrand] = useState('');
   const [searchModel, setSearchModel] = useState('');
@@ -45,7 +45,7 @@ export default function Catalogue({ allCars, isLoading , size}: CatalogueProps) 
       <h1 className='text-4xl font-bold text-zinc-900'>Car Catalogue</h1>
       <p className='mt-2 text-sm text-zinc-400'>Explore out cars you might like</p>
       <div className='mt-6 flex w-full flex-col items-center justify-center gap-2 md:flex-row md:justify-between'>
-      <SearchBar setSearchBrand={setSearchBrand} setSearchModel={setSearchModel} />
+        <SearchBar setSearchBrand={setSearchBrand} setSearchModel={setSearchModel} />
         <Filter />
       </div>
 

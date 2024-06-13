@@ -9,8 +9,8 @@ type SearchBarProps = {
 
 export default function SearchBar({ setSearchBrand, setSearchModel }: SearchBarProps) {
   return (
-    <form className='flex w-full max-w-3xl flex-col items-center justify-center gap-2 rounded border bg-white  px-2 dark:border-slate-700 dark:bg-slate-800 md:flex-row'>
-      <div className='relative flex w-full items-center px-4 py-2.5 dark:border-slate-700 md:border-r '>
+    <form className='flex w-full max-w-3xl flex-col items-center justify-center gap-2 rounded border bg-white px-2 dark:border-slate-700 dark:bg-slate-800 md:flex-row'>
+      <div className='relative flex w-full items-center px-4 py-2.5 dark:border-slate-700 md:border-r'>
         <Image src={'/icons/car-logo.svg'} alt='car company logo' width={20} height={20} className='object-contain' />
         <input
           type='text'
@@ -28,7 +28,7 @@ export default function SearchBar({ setSearchBrand, setSearchModel }: SearchBarP
           />
         </button>
       </div>
-      <div className='flex w-full items-center px-4 py-2.5 '>
+      <div className='flex w-full items-center px-4 py-2.5'>
         <Image src={'/images/model-icon.png'} alt='model icon' width={20} height={20} className='object-contain' />
         <input
           type='text'
@@ -58,4 +58,3 @@ export default function SearchBar({ setSearchBrand, setSearchModel }: SearchBarP
     </form>
   );
 }
-

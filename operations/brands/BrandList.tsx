@@ -1,4 +1,3 @@
-
 import { Datagrid, ImageField, List, TextField } from 'react-admin';
 
 export const BrandList = () => (

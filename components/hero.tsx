@@ -17,7 +17,7 @@ export default function Hero() {
         </Link>
       </div>
 
-      <div className='flex h-[590px] w-full items-end justify-end lg:h-screen lg:flex-[1.25] '>
+      <div className='flex h-[590px] w-full items-end justify-end lg:h-screen lg:flex-[1.25]'>
         <div className='relative h-full w-full'>
           <Image
             src={'/images/main-car.webp'}
@@ -33,4 +33,3 @@ export default function Hero() {
     </section>
   );
 }
-

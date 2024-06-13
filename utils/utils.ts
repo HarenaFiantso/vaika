@@ -23,4 +23,3 @@ export const updateSearchParams = (type: string, value: string): string => {
 export const validateString = (value: unknown, maxLength: number) => {
   return !(!value || typeof value !== 'string' || value.length > maxLength);
 };
-

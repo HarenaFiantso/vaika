@@ -15,7 +15,7 @@ export default function ShowAllCars() {
 
   return (
     <div className='h-[100vh] overflow-auto p-7'>
-      <div className='mt-6 grid grid-cols-1 gap-2 sm:grid-cols-2  md:grid-cols-3 md:gap-3 2xl:grid-cols-4'>
+      <div className='mt-6 grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-3 md:gap-3 2xl:grid-cols-4'>
         {cars?.length === 0 ? (
           <p className='w-full text-center text-xl font-semibold text-black dark:text-white'>No cars found</p>
         ) : (
@@ -29,4 +29,3 @@ export default function ShowAllCars() {
     </div>
   );
 }
-

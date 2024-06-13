@@ -1,12 +1,12 @@
 'use client';
 
 import { brands, cars, users } from '@/operations';
+import appointments from '@/operations/appointment';
 import { authProvider, dataProvider } from '@/providers';
 import { BrandingWatermark, CarCrashTwoTone } from '@mui/icons-material';
 import { createTheme } from '@mui/material/styles';
 import { Admin, Resource } from 'react-admin';
 import { FaUser } from 'react-icons/fa';
-import appointments from '@/operations/appointment';
 
 import Login from '@/components/dashboard/login';
 

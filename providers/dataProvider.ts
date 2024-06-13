@@ -1,5 +1,5 @@
 import { TVaikaDataProvider } from '@/lib/type';
-import { brandProvider, carProvider, userProvider, appointmentProvider } from '@/providers';
+import { appointmentProvider, brandProvider, carProvider, userProvider } from '@/providers';
 import {
   DeleteManyParams,
   DeleteManyResult,

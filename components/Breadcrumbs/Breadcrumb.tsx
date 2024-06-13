@@ -15,7 +15,7 @@ const Breadcrumb = ({ pageName }: BreadcrumbProps) => {
               Admin /
             </Link>
           </li>
-          <li className='text-primary font-medium text-white'>{pageName}</li>
+          <li className='font-medium text-primary text-white'>{pageName}</li>
         </ol>
       </nav>
     </div>
