@@ -29,7 +29,7 @@ export default function Hero() {
             className="flex gap-x-5 rounded px-10 py-7 text-[16px]"
             data-aos="fade-up"
             data-aos-delay="200"
-            onClick={() => router.push('/home#explore')}
+            onClick={() => router.push('/home#exploredev')}
           >
             Explore cars
           </Button>
