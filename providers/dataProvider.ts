@@ -1,5 +1,5 @@
 import { TVaikaDataProvider } from '@/lib/type';
-import { brandProvider, carProvider, userProvider } from '@/providers';
+import { appointmentProvider, brandProvider, carProvider, userProvider } from '@/providers';
 import {
   DeleteManyParams,
   DeleteManyResult,
@@ -20,6 +20,7 @@ const getProvider = (resourceType: string): TVaikaDataProvider => {
   if (resourceType === 'users') return userProvider;
   if (resourceType === 'brands') return brandProvider;
   if (resourceType === 'cars') return carProvider;
+  if (resourceType === 'appointments') return appointmentProvider;
 
   throw new Error('Unexpected resourceType: ' + resourceType);
 };
@@ -38,6 +39,7 @@ const dataProvider: RaDataProvider = {
     }
     const filter = params.filter;
     const result = await getProvider(resourceType).getList(page, perPage, filter, meta);
+
     return { data: result, pageInfo: { hasNextPage: true, hasPreviousPage: true } };
   },
   async getOne(resourceType: string, params: any) {

@@ -2,6 +2,7 @@
 
 import { brandApi } from '@/services/vaika-api';
 import { Brand } from '@vaika-api/typescript-client';
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 

@@ -1,6 +1,7 @@
 'use client';
 
 import { brands, cars, users } from '@/operations';
+import appointments from '@/operations/appointment';
 import { authProvider, dataProvider } from '@/providers';
 import { BrandingWatermark, CarCrashTwoTone } from '@mui/icons-material';
 import { createTheme } from '@mui/material/styles';
@@ -51,6 +52,7 @@ export default function AdminApp() {
       <Resource icon={FaUser} name='users' {...users} />
       <Resource icon={CarCrashTwoTone} name='cars' {...cars} />
       <Resource icon={BrandingWatermark} name='brands' {...brands} />
+      <Resource name='appointments' {...appointments} />
     </Admin>
   );
 }
