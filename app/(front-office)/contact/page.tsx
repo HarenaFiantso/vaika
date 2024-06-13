@@ -8,8 +8,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
-import { useToast } from '@/components/ui/use-toast';
 import { ToastAction } from '@/components/ui/toast';
+import { useToast } from '@/components/ui/use-toast';
 
 export default function Page() {
   const [name, setName] = useState('');
@@ -45,7 +45,7 @@ export default function Page() {
         type: 'background',
         title: 'Email not sent',
         description: 'There is an error while sending email',
-        action: <ToastAction altText="Try again">Try again</ToastAction>,
+        action: <ToastAction altText='Try again'>Try again</ToastAction>,
         variant: 'destructive',
       });
     }
@@ -54,34 +54,34 @@ export default function Page() {
   };
 
   return (
-    <Card data-aos="fade-up" className="m-auto w-1/2">
+    <Card data-aos='fade-up' className='m-auto w-1/2'>
       <CardHeader>
-        <CardTitle className="text-xl">Contact us</CardTitle>
-        <CardDescription className="text-zinc-500">
+        <CardTitle className='text-xl'>Contact us</CardTitle>
+        <CardDescription className='text-zinc-500'>
           If you want a better information, please contact us by completing the following forms
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <form ref={formRef} onSubmit={handleSubmit} className="grid gap-4">
-          <div className="grid gap-2">
+        <form ref={formRef} onSubmit={handleSubmit} className='grid gap-4'>
+          <div className='grid gap-2'>
             <Label>Name</Label>
-            <Input id="name" placeholder="Enter your name" onChange={(e) => setName(e.target.value)} />
+            <Input id='name' placeholder='Enter your name' onChange={(e) => setName(e.target.value)} />
           </div>
-          <div className="grid gap-2">
+          <div className='grid gap-2'>
             <Label>Email</Label>
-            <Input id="email" type="email" placeholder="Enter your email" onChange={(e) => setEmail(e.target.value)} />
+            <Input id='email' type='email' placeholder='Enter your email' onChange={(e) => setEmail(e.target.value)} />
           </div>
-          <div className="grid gap-2">
+          <div className='grid gap-2'>
             <Label>Message</Label>
             <Textarea
-              id="message"
+              id='message'
               rows={5}
               cols={10}
-              className="resize-none"
+              className='resize-none'
               onChange={(e) => setMessage(e.target.value)}
             />
           </div>
-          <Button type="submit" className="w-full" disabled={isLoading}>
+          <Button type='submit' className='w-full' disabled={isLoading}>
             {isLoading ? 'Loading...' : 'Submit'}
           </Button>
         </form>
