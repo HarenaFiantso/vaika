@@ -1,9 +1,9 @@
-import { AppointmentEdit } from "./AppointmentEdit"
-import { AppointmentList } from "@/operations/appointment/AppointmentList"
+import { AppointmentEdit } from './AppointmentEdit';
+import { AppointmentList } from '@/operations/appointment/AppointmentList';
 
 const appointments = {
-    list: <AppointmentList />,
-    edit: <AppointmentEdit />,
-}
+  list: <AppointmentList />,
+  edit: <AppointmentEdit />,
+};
 
-export default appointments
+export default appointments;

@@ -1,8 +1,8 @@
 import { VaikaDataProvider } from './VaikaDataProvider';
+import { appointmentProvider } from './appointmentProvider';
 import { carProvider } from './carProvider';
 import { userProvider } from './userProvider';
 import { brandProvider } from '@/providers/brandProvider';
-import { appointmentProvider } from './appointmentProvider';
 import {
   DeleteManyParams,
   DeleteManyResult,
