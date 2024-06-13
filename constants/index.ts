@@ -56,3 +56,4 @@ export type IdCar = {
 export type Id = {
   id: string;
 };
+

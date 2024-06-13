@@ -75,3 +75,4 @@ export default function CarCardInfoSkeleton({ idCar }: IdCar) {
     </div>
   );
 }
+

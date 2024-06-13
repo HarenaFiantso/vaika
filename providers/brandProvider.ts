@@ -1,10 +1,9 @@
-import { VaikaDataProvider } from './VaikaDataProvider';
+import { TVaikaDataProvider } from '@/lib/type';
 import { brandApi, unwrap } from '@/services/vaika-api';
 
-export const brandProvider: VaikaDataProvider = {
+export const brandProvider: TVaikaDataProvider = {
   getList: async function (page?: number | undefined, perPage?: number | undefined, filter?: any, meta?: any) {
-    const brands = await unwrap(() => brandApi.getBrands(page, perPage));
-    return brands;
+    return await unwrap(() => brandApi.getBrands(page, perPage));
   },
   getOne: async function (id: string, meta?: any) {
     return new Error('Function not implemented');

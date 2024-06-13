@@ -1,7 +1,6 @@
+import { authTokenCache } from '@/lib/cache';
 import { securityApi, unwrap } from '@/services/vaika-api';
 import { AuthProvider } from 'react-admin';
-
-import { authTokenCache, clearCaches } from '@/utils/cache';
 
 export const authProvider: AuthProvider = {
   login: async ({ email, password }) => {

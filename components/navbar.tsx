@@ -1,7 +1,5 @@
 'use client';
 
-import { CustomButton } from '@/components';
-import { useTheme } from 'next-themes';
 import Link from 'next/link';
 import { ReactNode, useState } from 'react';
 import { BsGithub, BsTwitter } from 'react-icons/bs';
@@ -102,3 +100,4 @@ export default function Navbar(): ReactNode {
     </nav>
   );
 }
+

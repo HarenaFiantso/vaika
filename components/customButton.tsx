@@ -24,3 +24,4 @@ export default function CustomButton({ title, handleClick, containerStyle, type,
     </button>
   );
 }
+

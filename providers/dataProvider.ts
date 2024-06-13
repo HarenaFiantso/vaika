@@ -1,8 +1,5 @@
-import { VaikaDataProvider } from './VaikaDataProvider';
-import { appointmentProvider } from './appointmentProvider';
-import { carProvider } from './carProvider';
-import { userProvider } from './userProvider';
-import { brandProvider } from '@/providers/brandProvider';
+import { TVaikaDataProvider } from '@/lib/type';
+import { brandProvider, carProvider, userProvider, appointmentProvider } from '@/providers';
 import {
   DeleteManyParams,
   DeleteManyResult,
@@ -17,9 +14,9 @@ import {
   UpdateManyResult,
 } from 'react-admin';
 
-export const MAX_ITEM_PER_PAGE = 1;
+export const MAX_ITEM_PER_PAGE: number = 50;
 
-const getProvider = (resourceType: string): VaikaDataProvider => {
+const getProvider = (resourceType: string): TVaikaDataProvider => {
   if (resourceType === 'users') return userProvider;
   if (resourceType === 'brands') return brandProvider;
   if (resourceType === 'cars') return carProvider;
@@ -32,7 +29,7 @@ const dataProvider: RaDataProvider = {
   async getList(resourceType: string, params: any) {
     const pagination = params.pagination;
     const meta = params.meta;
-    const page = pagination.page === 0 ? 1 : pagination.page;
+    const page = pagination.page > 0 ? pagination : 0;
     let perPage = pagination.perPage;
     if (perPage > MAX_ITEM_PER_PAGE) {
       console.warn(
@@ -42,7 +39,8 @@ const dataProvider: RaDataProvider = {
     }
     const filter = params.filter;
     const result = await getProvider(resourceType).getList(page, perPage, filter, meta);
-    return { data: result, total: Number.MAX_SAFE_INTEGER };
+
+    return { data: result, pageInfo: { hasNextPage: true, hasPreviousPage: true } };
   },
   async getOne(resourceType: string, params: any) {
     const result = await getProvider(resourceType).getOne(params.id, params.meta);

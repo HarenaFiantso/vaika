@@ -1,10 +1,9 @@
-import { VaikaDataProvider } from './VaikaDataProvider';
+import { TVaikaDataProvider } from '@/lib/type';
 import { unwrap, userApi } from '@/services/vaika-api';
 
-export const userProvider: VaikaDataProvider = {
+export const userProvider: TVaikaDataProvider = {
   getList: async function (page?: number | undefined, perPage?: number | undefined, filter?: any, meta?: any) {
-    const users = await unwrap(() => userApi.getUsers(page, perPage));
-    return users;
+    return await unwrap(() => userApi.getUsers(page, perPage));
   },
   getOne: async function (id: string, meta?: any) {
     return await unwrap(() => userApi.getUserById(id));

@@ -80,3 +80,4 @@ export default function CarCard({ car, isPinned }: CarCardProps) {
     </div>
   );
 }
+

@@ -5,9 +5,9 @@ export const UserEdit = () => {
   return (
     <Edit>
       <SimpleForm>
-        <TextInput source='username' />
-        <TextInput source='email' />
-        <PasswordInput source={password} />
+        <TextInput source='username' name='username' />
+        <TextInput source='email' name='email' />
+        <PasswordInput source={password} name='password' />
       </SimpleForm>
     </Edit>
   );
