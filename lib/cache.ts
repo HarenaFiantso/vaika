@@ -34,10 +34,3 @@ const inLocalStorage = <T>(key: string) =>
   });
 
 export const authTokenCache = inLocalStorage<LoginResponse>('auth_token');
-
-export const clearCaches = () => {
-  if (typeof window !== 'undefined') {
-    localStorage.clear();
-    sessionStorage.clear();
-  }
-};

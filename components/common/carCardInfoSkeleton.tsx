@@ -1,12 +1,11 @@
 'use client';
 
-import { IdCar } from '@/constants';
 import { carApi } from '@/services/vaika-api';
 import { Car } from '@vaika-api/typescript-client';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
-export default function CarCardInfoSkeleton({ idCar }: IdCar) {
+export default function CarCardInfoSkeleton({ idCar }: { idCar: string }) {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [car, setCar] = useState<Car | any>();
 

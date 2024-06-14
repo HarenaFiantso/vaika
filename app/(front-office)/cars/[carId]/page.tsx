@@ -1,10 +1,9 @@
 'use client';
 
-import { Appointment, AppointmentFormData } from '@/constants';
 import { appointmentApi, carApi } from '@/services/vaika-api';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Category, Colorize } from '@mui/icons-material';
-import { Car } from '@vaika-api/typescript-client';
+import { AppointmentStatusEnum, Car } from '@vaika-api/typescript-client';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
@@ -14,12 +13,29 @@ import { BsHammer, BsLightning } from 'react-icons/bs';
 import { PiEngine, PiMotorcycle } from 'react-icons/pi';
 import { SiWorkplace } from 'react-icons/si';
 import { UUID } from 'uuid-generator-ts';
+import z from 'zod';
 
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { toast } from '@/components/ui/use-toast';
+
+const Appointment = z
+  .object({
+    id: z.string(),
+    last_name: z.string().min(5),
+    first_name: z.string().min(5),
+    email: z.string().email(),
+    contact: z.string().min(10).max(10),
+    message: z.string().min(5),
+    appointment_datetime: z.coerce.date(),
+    car_id: z.string(),
+    status: z.enum([AppointmentStatusEnum.PENDING]),
+  })
+  .required();
+
+export type AppointmentFormData = z.infer<typeof Appointment>;
 
 export default function Page() {
   const pathname = usePathname().split('/');
