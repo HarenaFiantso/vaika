@@ -28,8 +28,10 @@ export const appointmentProvider: VaikaDataProvider = {
     const transformedResources = transformAppointments(resources);
     return await unwrap(() => appointmentApi.crupdateAppointment(transformedResources));
   },
-  delete: function (id: string): Promise<any> {
-    throw new Error('Function not implemented.');
+  delete: async function (id) {
+    const toDelete = await unwrap(() => appointmentApi.getAppointmentById(id));
+    const transformedToDelete = transformAppointments([{ ...toDelete, status: AppointmentStatusEnum.ARCHIVED }]);
+    return unwrap(() => appointmentApi.crupdateAppointment(transformedToDelete));
   },
   getList: async function (page?: number, perPage?: number, filter?: any, meta?: any): Promise<any[]> {
     const statusesToFetch = [
