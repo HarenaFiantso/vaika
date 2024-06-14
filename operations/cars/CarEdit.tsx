@@ -1,5 +1,5 @@
 import { Car, CrupdateCar } from '@vaika-api/typescript-client';
-import { BooleanInput, Edit, NumberInput, SimpleForm, TextInput } from 'react-admin';
+import { BooleanInput, Edit, NumberInput, ReferenceInput, SimpleForm, TextInput } from 'react-admin';
 
 export const CarEdit = () => {
   return (
@@ -29,6 +29,7 @@ export const CarEdit = () => {
         <TextInput source='power' name='power' />
         <NumberInput source='place_number' name='placeNumber' />
         <BooleanInput source='pinned' name='pinned' />
+        <ReferenceInput source='brand.id' reference='brands' label='Brand' />
       </SimpleForm>
     </Edit>
   );

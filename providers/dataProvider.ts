@@ -46,11 +46,9 @@ const dataProvider: RaDataProvider = {
     const result = await getProvider(resourceType).delete(params.id);
     return { data: result };
   },
-  getMany: function <RecordType extends RaRecord<Identifier> = any>(
-    resource: string,
-    params: GetManyParams
-  ): Promise<GetManyResult<RecordType>> {
-    throw new Error('Function not implemented.');
+  async getMany(resourceType) {
+    const result = await getProvider(resourceType).getList(0, 10);
+    return { data: result };
   },
   getManyReference: function <RecordType extends RaRecord<Identifier> = any>(
     resource: string,
