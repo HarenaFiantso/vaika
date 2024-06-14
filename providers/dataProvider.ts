@@ -43,7 +43,8 @@ const dataProvider: RaDataProvider = {
     return { data: result[0] };
   },
   async create(resourceType: string, params: any) {
-    const result = await getProvider(resourceType).saveOrUpdate(params.data);
+    console.log(resourceType, getProvider(resourceType));
+    const result = await getProvider(resourceType).saveOrUpdate([params.data]);
     return { data: result[0] };
   },
   async delete(resourceType: string, params: any) {

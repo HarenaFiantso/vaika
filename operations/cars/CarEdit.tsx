@@ -27,7 +27,7 @@ export const CarEdit = () => {
         <TextInput source='model' name='model' />
         <TextInput source='color' name='color' />
         <TextInput source='power' name='power' />
-        <NumberInput source='place_number' name='placeNumber' />
+        <NumberInput source='place_number' name='place_number' />
         <ReferenceInput source='brand.id' reference='brands' />
         <ReferenceInput source='type.id' reference='car-types' />
         <ReferenceInput source='motor_type.id' reference='motor-types' />
