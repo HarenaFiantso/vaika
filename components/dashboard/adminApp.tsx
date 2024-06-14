@@ -5,7 +5,7 @@ import appointments from '@/operations/appointment';
 import { authProvider, dataProvider } from '@/providers';
 import { BrandingWatermark, CarCrashTwoTone } from '@mui/icons-material';
 import { createTheme } from '@mui/material/styles';
-import { Admin, Resource } from 'react-admin';
+import { Admin, ListGuesser, Resource } from 'react-admin';
 import { FaUser } from 'react-icons/fa';
 
 import Login from '@/components/dashboard/login';
@@ -53,6 +53,7 @@ export default function AdminApp() {
       <Resource icon={CarCrashTwoTone} name='cars' {...cars} />
       <Resource name='appointments' {...appointments} />
       <Resource icon={BrandingWatermark} name='brands' {...brands} recordRepresentation='name' />
+      <Resource name='car-types' list={ListGuesser} recordRepresentation='name' />
     </Admin>
   );
 }

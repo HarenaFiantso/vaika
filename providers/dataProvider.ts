@@ -1,3 +1,4 @@
+import { carTypeProvider } from './carTypeProvider';
 import { TVaikaDataProvider } from '@/lib/type';
 import { appointmentProvider, brandProvider, carProvider, userProvider } from '@/providers';
 import {
@@ -19,6 +20,7 @@ const getProvider = (resourceType: string): TVaikaDataProvider => {
   if (resourceType === 'brands') return brandProvider;
   if (resourceType === 'cars') return carProvider;
   if (resourceType === 'appointments') return appointmentProvider;
+  if (resourceType === 'car-types') return carTypeProvider;
 
   throw new Error('Unexpected resourceType: ' + resourceType);
 };

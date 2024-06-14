@@ -28,8 +28,9 @@ export const CarEdit = () => {
         <TextInput source='color' name='color' />
         <TextInput source='power' name='power' />
         <NumberInput source='place_number' name='placeNumber' />
+        <ReferenceInput source='brand.id' reference='brands' />
+        <ReferenceInput source='type.id' reference='car-types' />
         <BooleanInput source='pinned' name='pinned' />
-        <ReferenceInput source='brand.id' reference='brands' label='Brand' />
       </SimpleForm>
     </Edit>
   );
