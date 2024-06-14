@@ -30,6 +30,7 @@ export const CarEdit = () => {
         <NumberInput source='place_number' name='placeNumber' />
         <ReferenceInput source='brand.id' reference='brands' />
         <ReferenceInput source='type.id' reference='car-types' />
+        <ReferenceInput source='motor_type.id' reference='motor-types' />
         <BooleanInput source='pinned' name='pinned' />
       </SimpleForm>
     </Edit>
