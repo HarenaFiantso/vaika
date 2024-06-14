@@ -54,6 +54,7 @@ export default function AdminApp() {
       <Resource name='appointments' {...appointments} />
       <Resource icon={BrandingWatermark} name='brands' {...brands} recordRepresentation='name' />
       <Resource name='car-types' list={ListGuesser} recordRepresentation='name' />
+      <Resource name='motor-types' list={ListGuesser} recordRepresentation='name' />
     </Admin>
   );
 }
