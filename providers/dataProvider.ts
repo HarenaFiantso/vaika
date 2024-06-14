@@ -14,8 +14,6 @@ import {
   UpdateManyResult,
 } from 'react-admin';
 
-export const MAX_ITEM_PER_PAGE: number = 50;
-
 const getProvider = (resourceType: string): TVaikaDataProvider => {
   if (resourceType === 'users') return userProvider;
   if (resourceType === 'brands') return brandProvider;
@@ -26,21 +24,9 @@ const getProvider = (resourceType: string): TVaikaDataProvider => {
 };
 
 const dataProvider: RaDataProvider = {
-  async getList(resourceType: string, params: any) {
-    const pagination = params.pagination;
-    const meta = params.meta;
-    const page = pagination.page > 0 ? pagination : 0;
-    let perPage = pagination.perPage;
-    if (perPage > MAX_ITEM_PER_PAGE) {
-      console.warn(
-        `Page size is too big, truncating to MAX_ITEM_PER_PAGE=${MAX_ITEM_PER_PAGE}: resourceType=${resourceType}, requested pageSize=${perPage}`
-      );
-      perPage = MAX_ITEM_PER_PAGE;
-    }
-    const filter = params.filter;
-    const result = await getProvider(resourceType).getList(page, perPage, filter, meta);
-
-    return { data: result, pageInfo: { hasNextPage: true, hasPreviousPage: true } };
+  async getList(resourceType, { pagination, sort, filter }) {
+    const result = await getProvider(resourceType).getList(pagination.page - 1, pagination.perPage, filter, sort);
+    return { data: result, total: result.length, pageInfo: { hasNextPage: true, hasPreviousPage: true } };
   },
   async getOne(resourceType: string, params: any) {
     const result = await getProvider(resourceType).getOne(params.id, params.meta);

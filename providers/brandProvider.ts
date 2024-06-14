@@ -2,7 +2,7 @@ import { TVaikaDataProvider } from '@/lib/type';
 import { brandApi, unwrap } from '@/services/vaika-api';
 
 export const brandProvider: TVaikaDataProvider = {
-  getList: async function (page?: number | undefined, perPage?: number | undefined, filter?: any, meta?: any) {
+  getList: async function (page, perPage) {
     return await unwrap(() => brandApi.getBrands(page, perPage));
   },
   getOne: async function (id: string, meta?: any) {
