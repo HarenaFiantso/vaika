@@ -20,7 +20,7 @@
     "@radix-ui/react-slot": "^1.0.2",
     "@radix-ui/react-toast": "^1.1.5",
     "@react-three/fiber": "^8.16.8",
-    "@vaika-api/typescript-client": "^1.6.0",
+    "@vaika-api/typescript-client": "^1.7.0",
     "aos": "2.3.4",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",

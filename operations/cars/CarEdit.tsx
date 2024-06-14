@@ -16,10 +16,10 @@ export const CarEdit = () => {
         brand_id: car.brand?.id,
         type_id: car.type?.id,
         motor_type_id: car.motor_type?.id,
+        pinned: car.pinned,
       })}
     >
       <SimpleForm>
-        <BooleanInput source='pinned' name='pinned' />
         <TextInput source='id' readOnly name='id' />
         <TextInput source='name' name='name' />
         <TextInput source='description' name='description' />
@@ -28,6 +28,7 @@ export const CarEdit = () => {
         <TextInput source='color' name='color' />
         <TextInput source='power' name='power' />
         <NumberInput source='place_number' name='placeNumber' />
+        <BooleanInput source='pinned' name='pinned' />
       </SimpleForm>
     </Edit>
   );
