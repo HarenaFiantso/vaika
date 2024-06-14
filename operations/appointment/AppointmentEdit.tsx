@@ -10,14 +10,14 @@ const statusChoices = Object.entries(AppointmentStatusEnum).map(([key, value]) =
 export const AppointmentEdit = () => (
   <Edit>
     <SimpleForm>
-      <TextInput source='id' />
-      <TextInput source='last_name' />
-      <TextInput source='first_name' />
-      <TextInput source='email' />
-      <TextInput source='contact' />
-      <TextInput source='message' />
-      <TextInput source='appointment_datetime' />
-      <TextInput source='car.id' />
+      <TextInput source='id' readOnly />
+      <TextInput source='last_name' readOnly />
+      <TextInput source='first_name' readOnly />
+      <TextInput source='email' readOnly />
+      <TextInput source='contact' readOnly />
+      <TextInput source='message' readOnly />
+      <TextInput source='appointment_datetime' readOnly />
+      <TextInput source='car.id' readOnly />
       <SelectInput source='status' choices={statusChoices} />
     </SimpleForm>
   </Edit>
