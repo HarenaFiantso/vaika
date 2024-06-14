@@ -149,7 +149,7 @@ export default function Page() {
       ) : null}
 
       {showDialog && (
-        <div className='inset-0 z-50'>
+        <div className='fixed inset-0 z-50'>
           <div className='flex min-h-screen items-end justify-center px-4 pb-20 pt-4 text-center sm:block sm:p-0'>
             <div className='inset-0 transition-opacity' aria-hidden='true'>
               <div className='absolute inset-0 bg-gray-500 opacity-75'></div>
