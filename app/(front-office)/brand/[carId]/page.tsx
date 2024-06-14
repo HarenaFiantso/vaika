@@ -1,23 +1,24 @@
-'use client'
+'use client';
 
-import { usePathname } from "next/navigation"
-import { carApi } from "@/services/vaika-api"
-import { useEffect, useState } from "react"
-import { Car } from "@vaika-api/typescript-client"
-import CarCard from "@/components/common/carCard"
-import CarCardSkeleton from "@/components/common/carCardSkeleton"
+import { carApi } from '@/services/vaika-api';
+import { Car } from '@vaika-api/typescript-client';
+import { usePathname } from 'next/navigation';
+import { useEffect, useState } from 'react';
 
-export default function BrandsCar(){
-    const pathname = usePathname().split('/')
-    const idBrand = pathname[2]
+import CarCard from '@/components/common/carCard';
+import CarCardSkeleton from '@/components/common/carCardSkeleton';
 
-    const [cars, setCars] = useState<Car[] | any>([]);
+export default function BrandsCar() {
+  const pathname = usePathname().split('/');
+  const idBrand = pathname[2];
+
+  const [cars, setCars] = useState<Car[] | any>([]);
   useEffect((): void => {
     carApi.getCarsByBrands(idBrand).then((data) => setCars(data.data));
   }, []);
 
-    return(
-        <div className='p-2'>
+  return (
+    <div className='p-2'>
       <div
         data-aos='fade-up'
         className='mt-6 grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-3 md:gap-3 2xl:grid-cols-4'
@@ -33,5 +34,5 @@ export default function BrandsCar(){
             .map((_, i: number) => <CarCardSkeleton key={i} />)}
       </div>
     </div>
-    )
+  );
 }

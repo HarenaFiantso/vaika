@@ -1,12 +1,11 @@
 'use client';
 
+import { updateSearchParams } from '@/lib/utils';
 import { Car } from '@vaika-api/typescript-client';
 import { AppRouterInstance } from 'next/dist/shared/lib/app-router-context.shared-runtime';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
-
-import { updateSearchParams } from '@/lib/utils';
 
 import CarCard from '@/components/common/carCard';
 import CarCardSkeleton from '@/components/common/carCardSkeleton';
