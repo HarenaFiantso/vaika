@@ -6,8 +6,8 @@ import { Resend } from 'resend';
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export const sendEmail = async (formData: FormData) => {
-  const email = formData.get('email');
-  const message = formData.get('message');
+  const email = formData.get('email')?.toString();
+  const message = formData.get('message')?.toString();
 
   if (!validateString(email, 500)) {
     return {
