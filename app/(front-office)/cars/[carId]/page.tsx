@@ -1,12 +1,10 @@
 'use client';
 
-import { Appointment, AppointmentFormData, AppointmentProps } from '@/constants';
-import { carApi } from '@/services/vaika-api';
-import { appointmentApi } from '@/services/vaika-api';
+import { Appointment, AppointmentFormData } from '@/constants';
+import { appointmentApi, carApi } from '@/services/vaika-api';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Category, Colorize } from '@mui/icons-material';
 import { Car } from '@vaika-api/typescript-client';
-import { Appointment as Aptm } from '@vaika-api/typescript-client';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
@@ -21,6 +19,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
+import { toast } from '@/components/ui/use-toast';
 
 export default function Page() {
   const pathname = usePathname().split('/');
@@ -34,6 +33,7 @@ export default function Page() {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm<AppointmentFormData>({
     resolver: zodResolver(Appointment),
     defaultValues: {
@@ -45,8 +45,20 @@ export default function Page() {
   const onSubmit: SubmitHandler<AppointmentFormData> = (data) => {
     appointmentApi
       .crupdateAppointment([data])
-      .then((response) => console.log(response))
-      .catch((error) => console.log(error));
+      .then((response) =>
+        toast({
+          title: response.statusText.toString(),
+          description: 'Appointment created',
+        })
+      )
+      .catch((error) =>
+        toast({
+          title: error,
+          description: 'There is an error while creating appointment',
+        })
+      );
+
+    reset();
   };
 
   const handleAppointmentClick = () => {
@@ -149,9 +161,9 @@ export default function Page() {
       ) : null}
 
       {showDialog && (
-        <div className='inset-0 z-50'>
+        <div className='fixed inset-0 z-50 overflow-y-auto'>
           <div className='flex min-h-screen items-end justify-center px-4 pb-20 pt-4 text-center sm:block sm:p-0'>
-            <div className='inset-0 transition-opacity' aria-hidden='true'>
+            <div className='fixed inset-0 transition-opacity' aria-hidden='true'>
               <div className='absolute inset-0 bg-gray-500 opacity-75'></div>
             </div>
 
