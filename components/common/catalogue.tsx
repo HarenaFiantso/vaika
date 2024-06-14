@@ -6,8 +6,6 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
-import { updateSearchParams } from '@/utils/utils';
-
 import CarCard from '@/components/common/carCard';
 import CarCardSkeleton from '@/components/common/carCardSkeleton';
 import Filter from '@/components/common/filter';
@@ -17,10 +15,9 @@ import { Button } from '@/components/ui/button';
 type CatalogueProps = {
   allCars: Car[];
   isLoading: boolean;
-  size: number;
 };
 
-export default function Catalogue({ allCars, isLoading, size }: CatalogueProps) {
+export default function Catalogue({ allCars, isLoading }: CatalogueProps) {
   const router: AppRouterInstance = useRouter();
   const [searchBrand, setSearchBrand] = useState('');
   const [searchModel, setSearchModel] = useState('');
@@ -35,11 +32,6 @@ export default function Catalogue({ allCars, isLoading, size }: CatalogueProps) 
     setFilteredCars(result);
   }, [searchBrand, searchModel, allCars]);
 
-  const handleClick = (): void => {
-    const newSize: number = ((size || 10) + 1) * 10;
-    const pathname: string = updateSearchParams('size', `${newSize}`);
-    router.push(pathname);
-  };
   return (
     <section id='explore' className='relative mx-auto mt-12 flex w-full max-w-[1440px] flex-col p-4 md:p-16'>
       <h1 className='text-4xl font-bold text-zinc-900'>Car Catalogue</h1>

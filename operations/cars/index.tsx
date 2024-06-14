@@ -1,6 +1,6 @@
 import { CarCreate } from './CarCreate';
-import { CarList } from './CarList';
 import { CarEdit } from '@/operations/cars/CarEdit';
+import { CarList } from '@/operations/cars/Carlist';
 
 const cars = {
   list: <CarList />,
