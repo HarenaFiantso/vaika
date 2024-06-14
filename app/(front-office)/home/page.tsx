@@ -26,7 +26,7 @@ export default function Page() {
     <main>
       <Hero />
       <Brands />
-      {allCars && <Catalogue allCars={allCars} isLoading={isLoading} />}
+      {allCars && <Catalogue allCars={allCars} isLoading={isLoading} size={0} />}
     </main>
   );
 }
