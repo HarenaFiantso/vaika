@@ -51,8 +51,8 @@ export default function AdminApp() {
     >
       <Resource icon={FaUser} name='users' {...users} />
       <Resource icon={CarCrashTwoTone} name='cars' {...cars} />
-      <Resource icon={BrandingWatermark} name='brands' {...brands} />
       <Resource name='appointments' {...appointments} />
+      <Resource icon={BrandingWatermark} name='brands' {...brands} recordRepresentation='name' />
     </Admin>
   );
 }
