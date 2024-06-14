@@ -1,5 +1,17 @@
 import { Car, CrupdateCar } from '@vaika-api/typescript-client';
-import { BooleanInput, Edit, NumberInput, ReferenceInput, SimpleForm, TextInput } from 'react-admin';
+import {
+  BooleanInput,
+  Edit,
+  NumberInput,
+  ReferenceInput,
+  SimpleForm,
+  TextInput,
+  minLength,
+  number,
+  required,
+} from 'react-admin';
+
+const numberValidator = [required(), number(), minLength(1)];
 
 export const CarEdit = () => {
   return (
@@ -21,12 +33,12 @@ export const CarEdit = () => {
     >
       <SimpleForm>
         <TextInput source='id' readOnly name='id' />
-        <TextInput source='name' name='name' />
-        <TextInput source='description' name='description' />
+        <TextInput source='name' name='name' validate={required()} />
+        <TextInput source='description' name='description' validate={required()} />
         <NumberInput source='price' name='price' />
-        <TextInput source='model' name='model' />
-        <TextInput source='color' name='color' />
-        <TextInput source='power' name='power' />
+        <TextInput source='model' name='model' validate={required()} />
+        <TextInput source='color' name='color' validate={required()} />
+        <TextInput source='power' name='power' validate={required()} />
         <NumberInput source='place_number' name='place_number' />
         <ReferenceInput source='brand.id' reference='brands' />
         <ReferenceInput source='type.id' reference='car-types' />

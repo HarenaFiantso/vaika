@@ -49,7 +49,6 @@ export default function AdminApp() {
       loginPage={Login}
       requireAuth
     >
-      <Resource icon={FaUser} name='users' {...users} />
       <Resource icon={CarCrashTwoTone} name='cars' {...cars} />
       <Resource name='appointments' {...appointments} />
       <Resource icon={BrandingWatermark} name='brands' {...brands} recordRepresentation='name' />
